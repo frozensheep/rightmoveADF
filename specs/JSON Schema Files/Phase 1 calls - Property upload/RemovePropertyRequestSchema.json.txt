@@ -1,0 +1,74 @@
+{
+	"description":"Rightmove Realtime Datafeed Json Schema for remove property request",
+	"type":"object",
+	"properties":{
+		"network":{
+			"type":"object",
+			"id":"network",
+			"required":true,
+			"description":"Information about the network calling the API",
+			"properties":{
+				"network_id":{
+					"type":"integer",
+					"id":"network_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this network"
+				}
+			},
+			"additionalProperties":false
+		},
+		"branch":{
+			"type":"object",
+			"id":"branch",
+			"required":true,
+			"description":"Information about the branch loading this property",
+			"properties":{
+				"branch_id":{
+					"type":"integer",
+					"id":"branch_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this branch"
+				},
+				"channel":{
+					"type":"integer",
+					"id":"channel",
+					"required":true,
+					"enum":[1, 2],
+					"description":"Defines whether this is the sales or lettings channel for a branch: 1 Sales 2 Lettings"
+				}
+			},
+			"additionalProperties":false
+		},
+		"property":{
+			"type":"object",
+			"id":"property",
+			"required":true,
+			"description":"Information about the property being sent",
+			"properties":{
+				"agent_ref":{
+					"type":"string",
+					"id":"agent_ref",
+					"required":true,
+					"description":"Agent's unique reference for this property",
+					"minLength": 1,
+					"maxLength": 80
+				},
+				"removal_reason":{
+					"type":["integer", "null"],
+					"id":"removal_reason",
+					"required":false,
+					"enum":[7, 8, 9, 10, 11, 12, null],
+					"description":"The agent's reason for removing this property from the site: 7 Sold by Us - 8 Sold by Another Agent - 9 Withdrawn from Market - 10 Lost Instruction - 11 Removed - 12 Let by Us"
+				},
+				"transaction_date":{
+					"type":["string", "null"],
+					"id":"transaction_date",
+					"required":false,
+					"description":"The date the transaction was completed (if applicable) - in the format: dd-MM-yyyy HH:mm:ss"
+				}
+			},
+			"additionalProperties":false
+		}
+	},
+	"additionalProperties":false
+}

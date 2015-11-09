@@ -1,0 +1,14 @@
+{
+               "network":{
+                               "network_id": 0
+               },
+               "branch":{
+                               "branch_id": 12345,
+                               "channel": 2
+               },
+               "property":{
+                               "agent_ref": "test_property_1",
+                               "removal_reason": 7,
+                               "transaction_date": "02-07-2013 00:00:00"
+                              }
+}

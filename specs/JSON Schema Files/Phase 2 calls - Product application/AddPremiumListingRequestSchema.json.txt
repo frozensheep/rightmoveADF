@@ -1,0 +1,103 @@
+{
+	"description":"Rightmove Realtime Datafeed Json Schema for add premium listing request",
+	"type":"object",
+	"properties":{
+		"network":{
+			"type":"object",
+			"id":"network",
+			"required":true,
+			"description":"Information about the network calling the API",
+			"properties":{
+				"network_id":{
+					"type":"integer",
+					"id":"network_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this network"
+				}
+			},
+			"additionalProperties":false
+		},
+		"branch":{
+			"type":"object",
+			"id":"branch",
+			"required":true,
+			"description":"Information about the branch loading this property",
+			"properties":{
+				"branch_id":{
+					"type":"integer",
+					"id":"branch_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this branch"
+				},
+				"channel":{
+					"type":"integer",
+					"id":"channel",
+					"required":true,
+					"enum":[1, 2],
+					"description":"Defines whether this is the sales or lettings channel for a branch: 1 Sales 2 Lettings"
+				}
+			},
+			"additionalProperties":false
+		},
+		"property":{
+			"type":"object",
+			"id":"property",
+			"required":true,
+			"description":"Information about the property being sent",
+			"properties":{
+				"agent_ref":{
+					"type":"string",
+					"id":"agent_ref",
+					"required":true,
+					"description":"Agent's unique reference for this property",
+					"minLength": 1,
+					"maxLength": 80
+				},
+				"premium_listing":{
+					"type":"object",
+					"id":"property",
+					"required":true,
+					"description":"Information about the property to premium list",
+					"properties":{
+						"display_type":{
+							"type":"integer",
+							"id":"display_type",
+							"required":true,
+							"enum":[1, 2],
+							"description":"The image layout which you would like associated with your premium listed property on Rightmove: 1 - one large image + two small images, 2 - one large image"
+						},
+                        "resale_stamp_text":{
+                            "type":["integer", "null"],
+                            "id":"resale_stamp_text",
+                            "required":false,
+                            "enum":[1, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 64, 65, 66, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, null],
+                            "description":"The stamp text which you would like displayed for you premium listed resale property on Rightmove (this field is mandatory if the channel provided is Resale): 1 - Auction, 4 - Stamp Duty Paid, 8 - Open House, 9 - Incentive, 10 - No Chain, 11 - Part Exchange, 12 - New Listing, 13 - Fixed Price, 14 - Premium Listing, 15 - Open To Offers, 16 - New Price, 17 - No Stamp Duty, 19 - Sea View, 20 - Public Notice, 22 - Viewing Advised, 23 - With Land, 24 - Attention Investors, 25 - Star Buy, 26 - No Sticker, 27 - Waterside, 28 - Generous Garden, 29 - Recently Renovated, 30 - Stunning Views, 31 - Smallholding, 32 - Open Day, 33 - Double Garage, 34 - Annexe, 35 - Media Tour, 36 - Best Bid, 37 - Informal Tender, 64 - Safe Move Property, 65 - Audio Tour, 66 - Video Tour, 71 - Listed Building, 72 - Period Property, 73 - Retirement, 74 - Equestrian, 75 - Conversion, 76 - Extended, 77 - Parking, 78 - Confidential Register, 79 - Buy to Let, 80 - Out Buildings"
+                        },
+                        "lettings_stamp_text":{
+                            "type":["integer", "null"],
+                            "id":"lettings_stamp_text",
+                            "required":false,
+                            "enum":[2, 5, 6, 7, 9, 12, 14, 15, 16, 21, 22, 26, 29, 59, 60, 61, 65, 66, 71, 72, 73, 74, 75, 76, 77, 80, null],
+                            "description":"The stamp text which you would like displayed for you premium listed lettings property on Rightmove (this field is mandatory if the channel provided is Lettings): 2 - Available Soon, 5 - Short Let, 6 - Furnished, 7 - Long Let, 9 - Incentive, 12 - New Listing, 14 - Premium Listing, 15 - Open To Offers, 16 - New Price, 21 - Unfurnished, 22 - Viewing Advised, 26 - No Sticker, 29 - Recently Renovated, 59 - For Students, 60 - Pets Considered, 61 - Available Now, 65 - Audio Tour, 66 - Video Tour, 71 - Listed Building, 72 - Period Property, 73 - Retirement, 74 - Equestrian, 75 - Conversion, 76 - Extended, 77 - Parking, 80 - Out Buildings"
+                        },
+						"web_flag":{
+							"type":"boolean",
+							"id":"web_flag",
+							"required":false,
+							"description":"Is this a web premium listing"
+						},
+						"mobile_flag":{
+							"type":"boolean",
+							"id":"mobile_flag",
+							"required":false,
+							"description":"Is this a mobile premium listing"
+						}
+					},
+					"additionalProperties":false
+				}
+			},
+			"additionalProperties":false
+		}
+	},
+	"additionalProperties":false
+}

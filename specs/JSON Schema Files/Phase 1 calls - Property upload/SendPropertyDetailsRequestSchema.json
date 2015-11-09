@@ -1,0 +1,768 @@
+{
+	"description":"Rightmove Realtime Datafeed Json Schema for send property request",
+	"type":"object",
+	"properties":{
+		"network":{
+			"type":"object",
+			"id":"network",
+			"required":true,
+			"description":"Information about the network calling the API",
+			"properties":{
+				"network_id":{
+					"type":"integer",
+					"id":"network_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this network"
+				}
+			},
+			"additionalProperties":false
+		},
+		"branch":{
+			"type":"object",
+			"id":"branch",
+			"required":true,
+			"description":"Information about the branch loading this property",
+			"properties":{
+				"branch_id":{
+					"type":"integer",
+					"id":"branch_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this branch"
+				},
+				"channel":{
+					"type":"integer",
+					"id":"channel",
+					"required":true,
+					"enum":[1, 2],
+					"description":"Defines whether this is the sales or lettings channel for a branch: 1 Sales 2 Lettings"
+				},
+				"overseas":{
+					"type":["boolean", "null"],
+					"id":"overseas",
+					"required":false,
+					"description":"Flag to identify whether a property is UK or Overseas"
+				}
+			},
+			"additionalProperties":false
+		},
+		"property":{
+			"type":"object",
+			"id":"property",
+			"required":true,
+			"description":"Information about the property being sent",
+			"properties":{
+				"agent_ref":{
+					"type":"string",
+					"id":"agent_ref",
+					"required":true,
+					"minLength": 1,
+					"maxLength": 80,
+					"description":"Agent's unique reference for this property"
+
+				},
+				"published":{
+					"type":"boolean",
+					"id":"published",
+					"required":true,
+					"description":"Defines whether this property should be visible on Rightmove"
+				},
+				"property_type":{
+					"type":"integer",
+					"id":"property_type",
+					"required":true,
+					"enum":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 92, 95, 101, 104, 107, 110, 113, 116, 117, 118, 119, 120, 121, 125, 128, 131, 134, 137, 140, 141, 142, 143, 144, 178, 181, 184, 187, 190, 193, 196, 199, 202, 205, 208, 211, 214, 217, 220, 223, 226, 229, 232, 235, 238, 241, 244, 247, 250, 253, 256, 259, 262, 265, 268, 271, 274, 277, 280, 283, 298, 301, 304, 307, 310, 511, 512, 535, 538, 541],
+					"description":"The type of the property being sent in this message: 0 Not Specified, 1 Terraced House, 2 End of terrace house, 3 Semi-detached house, 4 Detached house, 5 Mews house, 6 Cluster house, 7 Ground floor flat, 8 Flat, 9 Studio flat, 10 Ground floor maisonette, 11 Maisonette, 12 Bungalow, 13 Terraced bungalow, 14 Semi-detached bungalow, 15 Detached bungalow, 16 Mobile home, 20 Land (Residential), 21 Link detached house, 22 Town house, 23 Cottage, 24 Chalet, 25 Character Property, 26 House (unspecified), 27 Villa, 28 Apartment, 29 Penthouse, 30 Finca, 43 Barn Conversion, 44 Serviced apartment, 45 Parking, 46 Sheltered Housing, 47 Reteirment property, 48 House share, 49 Flat share, 50 Park home, 51 Garages, 52 Farm House, 53 Equestrian facility, 56 Duplex, 59 Triplex, 62 Longere, 65 Gite, 68 Barn, 71 Trulli, 74 Mill, 77 Ruins, 80 Restaurant, 83 Cafe, 86 Mill, 92 Castle, 95 Village House, 101 Cave House, 104 Cortijo, 107 Farm Land, 110 Plot, 113 Country House, 116 Stone House, 117 Caravan, 118 Lodge, 119 Log Cabin, 120 Manor House, 121 Stately Home, 125 Off-Plan, 128 Semi-detached Villa, 131 Detached Villa, 134 Bar/Nightclub, 137 Shop, 140 Riad, 141 House Boat, 142 Hotel Room, 143 Block of Apartments, 144 Private Halls, 178 Office, 181 Business Park, 184 Serviced Office, 187 Retail Property (High Street), 190 Retail Property (Out of Town), 193 Convenience Store, 196 Garages, 199 Hairdresser/Barber Shop, 202 Hotel, 205 Petrol Station, 208 Post Office, 211 Pub, 214 Workshop & Retail Space, 217 Distribution Warehouse, 220 Factory, 223 Heavy Industrial, 226 Industrial Park, 229 Light Industrial, 232 Storage, 235 Showroom, 238 Warehouse, 241 Land (Commercial), 244 Commercial Development, 247 Industrial Development, 250 Residential Development, 253 Commercial Property, 256 Data Centre, 259 Farm, 262 Healthcare Facility, 265 Marine Property, 268 Mixed Use, 271 Research & Development Facility, 274 Science Park, 277 Guest House, 280 Hospitality, 283 Leisure Facility, 298 Takeaway, 301 Childcare Facility, 304 Smallholding, 307 Place of Worship, 310 Trade Counter, 511 Coach House, 512 House of Multiple Occupation, 535 Sports facilities, 538 Spa, 541 Campsite & Holiday Village"
+				},
+				"status":{
+					"type":"integer",
+					"id":"status",
+					"required":true,
+					"enum":[1, 2, 3, 4, 5, 6],
+					"description":"The current transaction status for this property: 1 Available, 2 SSTC, 3 SSTCM, 4 Under Offer, 5 Reserved, 6 Let Agreed"
+				},
+				"new_home":{
+					"type":["boolean", "null"],
+					"id":"new_home",
+					"required":false,
+					"description":"Defines whether this property is a new build"
+				},
+				"student_property":{
+					"type":["boolean", "null"],
+					"id":"student_property",
+					"required":false,
+					"description":"Defines whether this property is available for student lettings"
+				},
+				"house_flat_share":{
+					"type":["boolean", "null"],
+					"id":"house_flat_share",
+					"required":false,
+					"description":"Defines whether this advert is for a house/flat share"
+				},
+				"create_date":{
+					"type":["string", "null"],
+					"id":"create_date",
+					"required":false,
+					"description":"Date this property was created in the format: dd-MM-yyyy HH:mm:ss"
+				},
+				"update_date":{
+					"type":["string", "null"],
+					"id":"update_date",
+					"required":false,
+					"description":"Date this property was last updated in the feed provider's software, in the format: dd-MM-yyyy HH:mm:ss"
+				},
+				"date_available":{
+					"type":["string", "null"],
+					"id":"date_available",
+					"required":false,
+					"description":"Date a rental property is available in the format: dd-MM-yyyy"
+				},
+				"contract_months":{
+					"type":["integer", "null"],
+					"id":"contract_months",
+					"required":false,
+					"minimum":0,
+					"description":"Length of rental contract in months"
+				},
+				"minimum_term":{
+					"type":["integer", "null"],
+					"id":"minimum_term",
+					"required":false,
+					"minimum":0,
+					"description":"Minimum term for the rental contract in months"
+				},
+				"let_type":{
+					"type":["integer", "null"],
+					"id":"let_type",
+					"required":false,
+					"enum":[1, 2, 4, 0, null],
+					"description":"The type of rental contract available for this property: 1 Long term, 2 Short term, 4 Commercial, 0 Not specified"
+				},
+				"address":{
+					"type":"object",
+					"id":"address",
+					"required":true,
+					"description":"Information about the address of the property being sent",
+					"properties":{
+						"house_name_number":{
+							"type":"string",
+							"id":"house_name_number",
+							"required":true,
+							"minLength":1,
+							"maxLength": 60,
+							"description":"The first line of the address including the property name or number"
+						},
+						"address_2":{
+							"type":["string", "null"],
+							"id":"address_2",
+							"required":false,
+							"maxLength": 60,
+							"description":"The second line of the address for this property"
+						},
+						"address_3":{
+							"type":["string", "null"],
+							"id":"address_3",
+							"required":false,
+							"maxLength": 60,
+							"description":"The third line of the address for this property"
+						},
+						"address_4":{
+							"type":["string", "null"],
+							"id":"address_4",
+							"required":false,
+							"maxLength": 60,
+							"description":"The fourth line of the address for this property"
+						},
+						"town":{
+							"type":"string",
+							"id":"town",
+							"required":true,
+							"minLength":1,
+							"maxLength": 60,
+							"description":"The town in which the property is located"
+						},
+						"postcode_1":{
+							"type":"string",
+							"id":"postcode_1",
+							"required":true,
+							"minLength":1,
+							"maxLength": 4,
+							"description":"The first half of the post code for the property being sent"
+						},
+						"postcode_2":{
+							"type":"string",
+							"id":"postcode_2",
+							"required":true,
+							"minLength":1,
+							"maxLength": 3,
+							"description":"The second half of the post code for the property being sent"
+						},
+						"display_address":{
+							"type":"string",
+							"id":"display_address",
+							"required":true,
+							"minLength":1,
+							"maxLength": 120,
+							"description":"The address which should be displayed for the property being sent"
+						},
+						"latitude":{
+							"type":["number", "null"],
+							"id":"latitude",
+							"required":false,
+							"minimum":-90.0,
+							"maximum":90.0,
+							"description":"The exact latitude of the property"
+						},
+						"longitude":{
+							"type":["number", "null"],
+							"id":"longitude",
+							"required":false,
+							"minimum":-180.0,
+							"maximum":180.0,
+							"description":"The exact longitude of the property"
+						},
+						"pov_latitude":{
+							"type":["number", "null"],
+							"id":"pov_latitude",
+							"required":false,
+							"minimum":-90.0,
+							"maximum":90.0,
+							"description":"The latitude for the google streetview camera"
+						},
+						"pov_longitude":{
+							"type":["number", "null"],
+							"id":"pov_longitude",
+							"required":false,
+							"minimum":-180.0,
+							"maximum":180.0,
+							"description":"The longitude for the google streetview camera"
+						},
+						"pov_pitch":{
+							"type":["number", "null"],
+							"id":"pov_pitch",
+							"required":false,
+                            "minimum":-180.0,
+                            "maximum":180.0,
+							"description":"The pitch for the google streetview camera"
+						},
+						"pov_heading":{
+							"type":["number", "null"],
+							"id":"pov_heading",
+							"required":false,
+                            "minimum":-360.0,
+                            "maximum":360.0,
+							"description":"The heading for the google streetview camera"
+						},
+						"pov_zoom":{
+							"type":["integer", "null"],
+							"id":"pov_zoom",
+							"required":false,
+							"description":"The zoom level for the google streetview camera"
+						}
+					},
+					"additionalProperties":false
+				},
+				"price_information":{
+					"type":"object",
+					"id":"price",
+					"required":true,
+					"description":"Information about the price of the property being sent",
+					"properties":{
+						"price":{
+							"type":"number",
+							"id":"price",
+							"minimum":1,
+							"required":true,
+							"description":"The price of the property being sent"
+						},
+						"price_qualifier":{
+							"type":["integer", "null"],
+							"id":"price_qualifier",
+							"required":false,
+							"enum":[0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 16, null],
+							"description":"The qualifier on the advertised price of the property being sent: 0 Default, 1 POA, 2 Guide Price, 3 Fixed Price, 4 Offers in excess of, 5 OIRO, 6 Sale by Tender, 7 From, 9 Shared Ownership, 10 Offers over, 11 Part Buy, Part Rent, 12 Shared Equity, 16 Coming Soon"
+						},
+						"deposit":{
+							"type":["integer", "null"],
+							"id":"deposit",
+							"required":false,
+							"minimum":0,
+							"description":"The deposit required for rental of the property being sent"
+						},
+						"administration_fee":{
+							"type":["string", "null"],
+							"id":"administration_fee",
+							"required":false,
+							"maxLength": 4000,
+							"description":"The admin fee required for the rental contract of the property being sent"
+						},
+						"rent_frequency":{
+							"type":["integer", "null"],
+							"id":"rent_frequency",
+							"required":false,
+							"enum":[1, 4, 12, 52, 365, null],
+							"description":"The frequency of rental payments for the property being sent: 1 Yearly, 4 Quarterly, 12 Monthly, 52 Weekly, 365 Daily"
+						},
+						"tenure_type":{
+							"type":["integer", "null"],
+							"id":"tenure_type",
+							"required":false,
+							"enum":[1, 2, 3, 4, 5, null],
+							"description":"The tenure type for the sale of the property being sent: 1 Freehold, 2 Leasehold, 3 Feudal, 4 Commonhold, 5 Share of Freehold"
+						},
+						"auction":{
+							"type":["boolean", "null"],
+							"id":"auction",
+							"required":false,
+							"description":"Indicates if this property is being sold at auction"
+						},
+						"tenure_unexpired_years":{
+							"type":["integer", "null"],
+							"id":"tenure_unexpired_years",
+							"minimum":0,
+							"required":false,
+							"description":"The number of years left on the tenure of this property"
+						},
+						"price_per_unit_area":{
+							"type":["number", "null"],
+							"id":"price_per_unit_area",
+							"minimum":0,
+							"required":false,
+							"description":"The price per unit area of the property being sent"
+						}
+					},
+					"additionalProperties":false
+				},
+				"details":{
+					"type":"object",
+					"id":"details",
+					"required":true,
+					"description":"The details about the property being sent",
+					"properties":{
+						"summary":{
+							"type":"string",
+							"id":"summary",
+							"required":true,
+							"minLength":1,
+							"maxLength": 1000,
+							"description":"The summary description of the property being sent"
+						},
+						"description":{
+							"type":"string",
+							"id":"description",
+							"required":true,
+							"minLength":1,
+							"maxLength": 32000,
+							"description":"The full description of the property being sent"
+						},
+						"features": {
+							"type":["array", "null"],
+							"id": "features",
+							"required": false,
+							"uniqueItems":true,
+							"maxItems": 10,
+							"description": "Features of the property being sent",
+							"items": {
+								"type": ["string"],
+								"minLength": 1,
+								"maxLength": 200
+							}
+						},
+						"bedrooms":{
+							"type":"integer",
+							"id":"bedrooms",
+							"required":true,
+							"minimum":0,
+							"description":"The number of bedrooms for the property being sent"
+						},
+						"bathrooms":{
+							"type":["integer", "null"],
+							"id":"bathrooms",
+							"required":false,
+							"minimum":0,
+							"description":"The number of bathrooms for the property being sent"
+						},
+						"reception_rooms":{
+							"type":["integer", "null"],
+							"id":"reception_rooms",
+							"required":false,
+							"minimum":0,
+							"description":"The number of reception rooms for the property being sent"
+						},
+						"parking":{
+							"type":["array", "null"],
+							"items":{
+								"enum":[13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, null]
+							},
+							"uniqueItems":true,
+							"id":"parking",
+							"required":false,
+							"description":"Parking options available for the property being sent: 13 Allocated, 14 Communal, 15 Covered, 16 Garage, 17 Driveway, 18 Gated, 19 Off Street, 20 On Street, 21 Rear, 22 Permit, 23 Private, 24 Residents"
+						},
+						"outside_space":{
+							"type":["array", "null"],
+							"items":{
+								"enum":[29, 30, 31, 32, 33, 34, 35, 36, null]
+							},
+							"uniqueItems":true,
+							"id":"outside_space",
+							"required":false,
+							"description":"Outside spaces associated with the property being sent: 29 Back Garden, 30 Communal Garden, 31 Enclosed Garden, 32 Front Garden, 33 Private Garden, 34 Rear Garden, 35 Terrace, 36 Patio"
+						},
+						"year_built":{
+							"type":["integer", "null"],
+							"id":"year_built",
+							"required":false,
+							"minimum":0,
+							"description":"The year in which the property being sent was built"
+						},
+						"internal_area":{
+							"type":["number", "null"],
+							"id":"internal_area",
+							"required":false,
+							"minimum":0,
+							"description":"Total internal area of the property being sent"
+						},
+						"internal_area_unit":{
+							"type":["integer", "null"],
+							"id":"internal_area_unit",
+							"required":false,
+							"enum":[1, 2, 3, 4, null],
+							"description":"Units which the internal area is sent in: 1 sq ft 2 sq m 3 acre 4 hectares"
+						},
+						"land_area":{
+							"type":["number", "null"],
+							"id":"land_area",
+							"required":false,
+							"minimum":0,
+							"description":"Total land area of the property being sent"
+						},
+						"land_area_unit":{
+							"type":["integer", "null"],
+							"id":"land_area_unit",
+							"required":false,
+							"enum":[1, 2, 3, 4, null],
+							"description":"Units which the land area is sent in: 1 sq ft 2 sq m 3 acre 4 hectares"
+						},
+						"floors":{
+							"type":["integer", "null"],
+							"id":"floors",
+							"required":false,
+							"minimum":0,
+							"description":"Number of floors in the property being sent"
+						},
+						"entrance_floor":{
+							"type":["integer", "null"],
+							"id":"entrance_floor",
+							"required":false,
+							"enum":[1, 2, 3, 4, 5, 6, null],
+							"description":"Floor which the entrance to the property being sent is on: 1 Basement, 2 Ground Floor, 3 1st Floor, 4 2nd Floor, 5 Higher than 2nd floor (no lift), 6 Higher than 2nd floor (with lift)"
+						},
+						"condition":{
+							"type":["integer", "null"],
+							"id":"condition",
+							"required":false,
+							"enum":[1, 2, 3, 4, null],
+							"description":"Condition of the property being sent: 1 Good, 2 Some work needed, 3 Work required throughout, 4 Major renovation required"
+						},
+						"accessibility":{
+							"type":["array", "null"],
+							"items":{
+								"enum":[42, 37, 38, 39, 40, 41, null]
+							},
+							"uniqueItems":true,
+							"id":"accessibility",
+							"required":false,
+							"description":"Accessibility measures in place in the property being sent: 42 Not suitable for wheelchair users, 37 Level access, 38 Lift access, 39 Ramped access, 40 Wet room, 41 Wide doorways"
+						},
+						"heating":{
+							"type":["array", "null"],
+							"items":{
+								"enum":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, null]
+							},
+							"uniqueItems":true,
+							"id":"heating",
+							"required":false,
+							"description":"Heating related features of the property being sent: 1 Air Conditioning, 2 Central, 3 Double Glazing, 4 Eco-Friendly, 5 Electric, 6 Gas, 7 Gas Central, 8 Night Storage, 9 Oil, 10 Solar, 11 Solar Water, 12 Under Floor"
+						},
+						"furnished_type":{
+							"type":["integer", "null"],
+							"enum":[0, 1, 2, 4, null],
+							"id":"furnished_type",
+							"required":false,
+							"description":"Is furnishing included in the rental of the property being sent: 0 Furnished, 1 Part-furnished, 2 Unfurnished, 4 Furnished/Unfurnished"
+						},
+						"pets_allowed":{
+							"type":["boolean", "null"],
+							"id":"pets_allowed",
+							"required":false,
+							"description":"Are pets permitted in the property being sent"
+						},
+						"smokers_considered":{
+							"type":["boolean", "null"],
+							"id":"smokers_considered",
+							"required":false,
+							"description":"Are smokers considered for the property being sent"
+						},
+						"housing_benefit_considered":{
+							"type":["boolean", "null"],
+							"id":"housing_benefit_considered",
+							"required":false,
+							"description":"Are people on housing benefit considered for the property being sent"
+						},
+						"sharers_considered":{
+							"type":["boolean", "null"],
+							"id":"sharers_considered",
+							"required":false,
+							"description":"Are sharers considered for the property being sent"
+						},
+						"burglar_alarm":{
+							"type":["boolean", "null"],
+							"id":"burglar_alarm",
+							"required":false,
+							"description":"Is there a burglar alarm in the property being sent"
+						},
+						"washing_machine":{
+							"type":["boolean", "null"],
+							"id":"washing_machine",
+							"required":false,
+							"description":"Is there a washing machine in the property being sent"
+						},
+						"dishwasher":{
+							"type":["boolean", "null"],
+							"id":"dishwasher",
+							"required":false,
+							"description":"Is there a dishwasher in the property being sent"
+						},
+						"all_bills_inc":{
+							"type":["boolean", "null"],
+							"id":"all_bills_inc",
+							"required":false,
+							"description":"Are bills included in the rental price of the property being sent"
+						},
+						"water_bill_inc":{
+							"type":["boolean", "null"],
+							"id":"water_bill_inc",
+							"required":false,
+							"description":"Is the water bill included in the rental price of the property being sent"
+						},
+						"gas_bill_inc":{
+							"type":["boolean", "null"],
+							"id":"gas_bill_inc",
+							"required":false,
+							"description":"Is the gas bill included in the rental price of the property being sent"
+						},
+						"electricity_bill_inc":{
+							"type":["boolean", "null"],
+							"id":"electricity_bill_inc",
+							"required":false,
+							"description":"Is the electricity bill included in the rental price of the property being sent"
+						},
+						"oil_bill_inc":{
+							"type":["boolean", "null"],
+							"id":"oil_bill_inc",
+							"required":false,
+							"description":"Is the oil bill included in the rental price of the property being sent"
+						},
+						"council_tax_inc":{
+							"type":["boolean", "null"],
+							"id":"council_tax_inc",
+							"required":false,
+							"description":"Is council tax included in the rental price of the property being sent"
+						},
+						"tv_licence_inc":{
+							"type":["boolean", "null"],
+							"id":"tv_licence_inc",
+							"required":false,
+							"description":"Is the tv licence included in the rental price of the property being sent"
+						},
+						"sat_cable_tv_bill_inc":{
+							"type":["boolean", "null"],
+							"id":"sat_cable_tv_bill_inc",
+							"required":false,
+							"description":"Is satellite or cable TV included in the rental price of the property being sent"
+						},
+						"internet_bill_inc":{
+							"type":["boolean", "null"],
+							"id":"internet_bill_inc",
+							"required":false,
+							"description":"Is the internet bill included in the rental price of the property being sent"
+						},
+						"business_for_sale":{
+							"type":["boolean", "null"],
+							"id":"business_for_sale",
+							"required":false,
+							"description":"Is there a business for sale with the commercial property being sent"
+						},
+						"comm_use_class":{
+							"type":["array", "null"],
+							"items":{
+								"enum":[1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, null]
+							},
+							"uniqueItems":true,
+							"maxItems":6,
+							"id":"comm_use_class",
+							"required":false,
+							"description":"The commercial use class(es) of the property being sent: 1 A1 Shops, 4 A2 Financial and Professional Services, 7 A3 Restaurants and Cafes, 10 A4 Drinking Establishments, 13 A5 Hot Food Take away, 16 B1 Business, 19 B2 General Industrial, 22 B8 Storage and Distribution, 25 C1 Hotels, 28 C2 Residential Institutions, 31 C2A Secure Residential Institution, 34 C3 Dwelling Houses, 37 D1 Non-Residential Institutions, 40 D2 Assembly and Leisure, 43 Sui_generis_1, 46 Sui_generis_2"
+						},
+						"rooms": {
+							"type":["array", "null"],
+							"id": "rooms",
+							"required": false,
+							"uniqueItems":true,
+							"maxItems": 99,
+							"description": "Room data for the property being sent",
+							"items": {
+								"type": ["object", "null"],
+								"properties":
+								{
+									"room_name": {
+										"type": "string",
+										"id": "room_name",
+										"description": "The name of the room",
+										"required": true,
+										"minLength": 1,
+										"maxLength": 120
+									},
+									"room_description": {
+										"type": ["string", "null"],
+										"id": "room_description",
+										"required": false,
+										"description": "The specific description of that room",
+										"maxLength": 1000
+									},
+									"room_length":{
+										"type":["number", "null"],
+										"id": "room_length",
+										"required": false,
+										"minimum":0,
+										"description": "The length of the room"
+									},
+									"room_width":{
+										"type":["number", "null"],
+										"id": "room_width",
+										"required": false,
+										"minimum":0,
+										"description": "The width of the room"
+									},
+									"room_dimension_unit":{
+										"type":["integer", "null"],
+										"id": "room_dimension_unit",
+										"required": false,
+										"enum": [5, 6, 7, 8, 9, null],
+										"description":"The units which the length and width of the room have been provided in: 5 Metres, 6 Centimetres, 7 Millimetres, 8 Feet, 9 Inches"
+									},
+									"room_dimension_text": {
+										"type": ["string", "null"],
+										"id": "room_dimension_text",
+										"description": "Any additional description or clarification of the room dimensions",
+										"required": false,
+										"minLength": 1,
+										"maxLength": 120
+									},
+									"room_photo_urls": {
+										"type":["array", "null"],
+										"id": "room_photo_urls",
+										"required": false,
+										"uniqueItems":true,
+										"maxItems": 10,
+										"description": "The URLs of images which should be associated with this room",
+										"items": {
+											"type": ["string", "null"],
+											"maxLength": 250
+										}
+									}
+								},
+								"additionalProperties":false
+							}
+						}
+					},
+					"additionalProperties":false
+				},
+				"media":{
+					"type":["array", "null"],
+					"id":"media",
+					"description":"The media for the property being sent",
+					"required":false,
+					"uniqueItems":true,
+					"maxItems":999,
+					"items":{
+						"type":"object",
+						"id":"media_detail",
+						"required":true,
+						"properties":
+						{
+							"media_type":{
+								"type":"integer",
+								"id":"media_type",
+								"required":true,
+								"enum":[1, 2, 3, 4, 5, 6, 7],
+								"description": "The type of media which is being sent: 1 Image, 2 Floorplan, 3 Brochure, 4 Virtual Tour, 5 Audio Tour, 6 EPC, 7 EPC Graph"
+							},
+							"media_url":{
+								"type":"string",
+								"minLength":1,
+								"maxLength":250,
+								"id":"media_url",
+								"required":true,
+								"description":"The URL to retrieve this piece of media from"
+							},
+							"caption":{
+								"type":["string", "null"],
+								"maxLength":50,
+								"id":"caption",
+								"required":false,
+								"description":"The caption to be displayed for this piece of media"
+							},
+							"sort_order":{
+								"type":["integer", "null"],
+								"id":"sort_order",
+								"required":false,
+								"minimum":0,
+								"description":"The display order for this piece of media"
+							},
+							"media_update_date":{
+								"type":["string", "null"],
+								"id":"media_update_date",
+								"required":false,
+								"description":"The date the media at this URL was last updated in the format: dd-MM-yyyy HH:mm:ss"
+							}
+						},
+						"additionalProperties":false
+					}
+				},
+				"principal":{
+					"type": ["object", "null"],
+					"id":"principal",
+					"required":false,
+					"uniqueItems":true,
+					"description":"Details of the principal for the property being sent",
+					"properties":
+					{
+						"principal_email_address": {
+							"type": ["string"],
+							"minLength":6,
+							"maxLength":200,
+							"id": "principal_email_address",
+							"required":true,
+							"description": "The email address for the principal for this property"
+						},
+						"auto_email_when_live": {
+							"type": ["boolean", "null"],
+							"id": "auto_email_when_live",
+							"required":false,
+							"description": "Should the principal be emailed when this property is live on Rightmove"
+						},
+						"auto_email_updates": {
+							"type": ["boolean", "null"],
+							"id": "auto_email_updates",
+							"required":false,
+							"description": "Should the principal be emailed when this property is updated on Rightmove"
+						}
+					},
+					"additionalProperties":false
+				}
+			},
+			"additionalProperties":false
+		}
+	}
+}

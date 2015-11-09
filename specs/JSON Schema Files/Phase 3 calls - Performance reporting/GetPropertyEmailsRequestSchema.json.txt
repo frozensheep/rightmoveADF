@@ -1,0 +1,75 @@
+{
+	"description":"Rightmove Realtime Datafeed Json Schema for the get property emails request",
+	"type":"object",
+	"properties":{
+		"network":{
+			"type":"object",
+			"id":"network",
+			"required":true,
+			"description":"Information about the network calling the API",
+			"properties":{
+				"network_id":{
+					"type":"integer",
+					"id":"network_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this network"
+				}
+			},
+			"additionalProperties":false
+		},
+		"branch":{
+			"type":"object",
+			"id":"branch",
+			"required":true,
+			"description":"Details about which branch's emails are being retrieved",
+			"properties":{
+				"branch_id":{
+					"type":"integer",
+					"id":"branch_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this branch"
+				}
+			},
+			"additionalProperties":false
+		},
+        "property":{
+            "type":"object",
+            "id":"property",
+            "required":true,
+            "description":"Information about the property for which emails are being exported",
+            "properties":{
+                "agent_ref":{
+                    "type":"string",
+                    "id":"agent_ref",
+                    "required":true,
+                    "description":"Agent's unique reference for this property",
+                    "minLength": 1,
+                    "maxLength": 80
+                }
+            },
+            "additionalProperties":false
+           },
+            "export_period":{
+                "type":"object",
+                "id":"export_period",
+                "required":true,
+                "description":"Defines the period for which emails are being exported",
+                "properties":{
+                    "start_date_time":{
+                        "type":"string",
+                        "id":"start_date_time",
+                        "required":true,
+                        "description":"The timestamp for the start of the export period - this cannot be more than 28 days ago in the format: dd-MM-yyyy HH:mm:ss"
+                    },
+                    "end_date_time":{
+                        "type":"string",
+                        "id":"end_date_time",
+                        "required":true,
+                        "description":"The timestamp for the end of the export period - this cannot be more than 28 days ago in the format: dd-MM-yyyy HH:mm:ss"
+                    }
+                },
+                "additionalProperties":false
+            }
+        },
+        "additionalProperties":false
+}

@@ -1,0 +1,380 @@
+{
+	"description": "Rightmove Realtime Datafeed Json Schema for GetPropertyEmails response",
+	"type": "object",
+	"properties": {
+		"request_id": {
+			"type": "string",
+			"required": true,
+			"description": "The unique ID of the request which this response is associated with"
+		},
+		"message": {
+			"type": "string",
+			"required": true,
+			"description": "The message content for the response"
+		},
+		"success": {
+			"type": "boolean",
+			"required": true,
+			"description": "Indicates whether or not the request was successful"
+		},
+		"request_timestamp": {
+			"type": "string",
+			"required": true,
+			"description": "The time at which the request was received in the format: dd-MM-yyyy HH:mm:ss"
+		},
+		"response_timestamp": {
+			"type": "string",
+			"required": true,
+			"description": "The time at which the response was sent in the format: dd-MM-yyyy HH:mm:ss"
+		},
+		"replication_lag": {
+			"type": ["integer", "null"],
+			"required": false,
+			"description": "The current lag time for replicating between the three Rightmove data centres in minutes"
+		},
+		"export_period": {
+			"type": ["object","null"],
+			"required": false,
+			"description": "The period for which emails are being exported",
+			"properties": {
+				"start_date_time": {
+					"type": "string",
+					"id": "start_date_time",
+					"required": true,
+					"description": "The start date/time for the export period in the format: dd-MM-yyyy HH:mm:ss - this cannot be more than 28 days ago"
+				},
+				"end_date_time":{
+					"type":"string",
+					"id":"end_date_time",
+					"required":true,
+					"description": "The end date/time for the export period in the format: dd-MM-yyyy HH:mm:ss - this cannot be more than 28 days ago"
+				}
+			},
+			"additionalProperties": false
+		},
+		"branch": {
+			"type": ["object","null"],
+			"required": false,
+			"description": "Details about which branch's emails are being retrieved",
+			"properties": {
+				"branch_id": {
+					"type": "integer",
+					"id": "branch_id",
+					"required": true,
+					"description": "Unique Rightmove ID for the branch for which the emails export is being generated"
+				}
+			},
+			"additionalProperties": false
+		},
+        "property": {
+            "type": ["object","null"],
+            "description": "Current details for this property on Rightmove",
+            "required": false,
+            "properties": {
+                "agent_ref":{
+                    "type":"string",
+                    "id":"agent_ref",
+                    "required":true,
+                    "description":"Agent's unique reference for the property"
+                },
+                "rightmove_id":{
+                    "type":"integer",
+                    "required":true,
+                    "description":"Rightmove's unique reference for the property"
+                },
+                "rightmove_url":{
+                    "type":"string",
+                    "required":true,
+                    "description":"The Rightmove URL for the property"
+                },
+                "price": {
+                    "type": "integer",
+                    "id": "price",
+                    "required": true,
+                    "description": "The current listed price for the property on Rightmove"
+                },
+                "postcode":{
+                    "type": "string",
+                    "id":"postcode",
+                    "required":true,
+                    "description":"The postcode provided for the property"
+                },
+                "bedrooms":{
+                    "type": "integer",
+                    "id":"bedrooms",
+                    "required":true,
+                    "description":"The number of bedrooms the property has"
+                },
+                "style":{
+                    "type": ["string", "null"],
+                    "id":"style",
+                    "required":false,
+                    "description":"The style for the property listing - for New Homes Developments only"
+                },
+                "property_type":{
+                    "type": "integer",
+                    "id":"property_type",
+                    "required":true,
+                    "description":"The type of the property: 0 Not Specified, 1 Terraced House, 2 End of terrace house, 3 Semi-detached house, 4 Detached house, 5 Mews house, 6 Cluster house, 7 Ground floor flat, 8 Flat, 9 Studio flat, 10 Ground floor maisonette, 11 Maisonette, 12 Bungalow, 13 Terraced bungalow, 14 Semi-detached bungalow, 15 Detached bungalow, 16 Mobile home, 20 Land, 21 Link detached house, 22 Town house, 23 Cottage, 24 Chalet, 26 House (unspecified), 27 Villa, 28 Apartment, 29 Penthouse, 30 Finca, 43 Barn Conversion, 44 Serviced apartment, 45 Parking, 46 Sheltered Housing, 47 Reteirment property, 48 House share, 49 Flat share, 50 Park home, 51 Garages, 52 Farm House, 53 Equestrian facility, 56 Duplex, 59 Triplex, 62 Longere, 65 Gite, 68 Barn, 71 Trulli, 74 Mill, 77 Ruins, 80 Restaurant, 83 Cafe, 86 Mill, 92 Castle, 95 Village House, 101 Cave House, 104 Cortijo, 107 Farm Land, 110 Plot, 113 Country House, 116 Stone House, 117 Caravan, 118 Lodge, 119 Log Cabin, 120 Manor House, 121 Stately Home, 125 Off-Plan, 128 Semi-detached Villa, 131 Detached Villa, 134 Bar/Nightclub, 137 Shop, 140 Riad, 141 House Boat, 142 Hotel Room, 143 Block of Apartments, 144 Private Halls, 178 Office, 181 Business Park, 184 Serviced Office, 187 Retail Property (High Street), 190 Retail Property (Out of Town), 193 Convenience Store, 196 Garages, 199 Hairdresser/Barber Shop, 202 Hotel Room, 205 Petrol Station, 208 Post Office, 211 Pub, 214 Workshop & Retail Space, 217 Distribution Warehouse, 220 Factory, 223 Heavy Industrial, 226 Industrial Park, 229 Light Industrial, 232 Storage, 235 Showroom, 238 Warehouse, 241 Land, 244 Commercial Development, 247 Industrial Development, 250 Residential Development, 253 Commercial Property, 256 Data Centre, 259 Farm, 262 Healthcare Facility, 265 Marine Property, 268 Mixed Use, 271 Research & Development Facility, 274 Science Park, 277 Guest House, 280 Hospitality, 283 Leisure Facility, 512 House of Multiple Occupation"
+                }
+            },
+            "additionalProperties": false
+        },
+		"emails": {
+			"type": [
+				"array",
+				"null"
+			],
+			"id": "emails",
+			"description": "Details of all the emails sent for the property during the export period",
+			"required": false,
+			"items": {
+				"type": "object",
+				"id": "email",
+				"required": true,
+				"properties": {
+					"email_id": {
+						"type": "integer",
+						"id": "email_id",
+						"required": true,
+						"description": "Unique Rightmove identifier for this email"
+					},
+					"from_address": {
+						"type": "string",
+						"id": "from_address",
+						"required": true,
+						"description": "The email address which the email came from"
+					},
+					"to_address": {
+						"type": "string",
+						"id": "to_address",
+						"required": true,
+						"description": "The email address which the email was sent to"
+					},
+					"email_date": {
+						"type": "string",
+						"id": "email_date",
+						"required": true,
+						"description": "The date the original email was sent in the format: dd-MM-yyyy HH:mm:ss"
+					},
+                    "email_types": {
+                        "type": [
+                            "array",
+                            "null"
+                        ],
+                        "required": false,
+                        "id": "email_types",
+                        "description": "A list of all the types the email sent belong to: 1 Request Viewing, 2 Request Appraisal, 3 Request Property Details, 4 Agent Valuation Request, 6 Email to Agent, 34 Multi agent email, 46 LVA lead",
+                        "items": {
+                            "type": "integer",
+                            "email_type":{
+                                "type": "integer",
+                                "id":"email_type",
+                                "required":true
+                            }
+                         }
+                    },
+					"user": {
+						"type": "object",
+						"required": true,
+						"description": "Details about the user and their requirements",
+						"properties": {
+							"user_contact_details": {
+								"type": "object",
+								"required": true,
+								"description": "The user's contact information",
+								"properties": {
+									"title": {
+										"type": ["null","string"],
+										"id": "title",
+										"required": false,
+										"description": "The user's title"
+									},
+									"first_name": {
+										"type": ["null","string"],
+										"id": "first_name",
+										"required": false,
+										"description": "The user's first name"
+									},
+									"last_name": {
+										"type": ["null","string"],
+										"id": "last_name",
+										"required": false,
+										"description": "The user's last name"
+									},
+									"address": {
+										"type": ["null","string"],
+										"id": "address",
+										"required": false,
+										"description": "The user's address"
+									},
+									"postcode": {
+										"type": ["null","string"],
+										"id": "postcode",
+										"required": false,
+										"description": "The user's postcode"
+									},
+									"country": {
+										"type": ["null","string"],
+										"id": "country",
+										"required": false,
+										"description": "The user's country of residence"
+									},
+									"phone_day": {
+										"type": ["null","string"],
+										"id": "phone_day",
+										"required": false,
+										"description": "The user's daytime telephone number"
+									},
+									"phone_evening": {
+										"type": ["null","string"],
+										"id": "phone_evening",
+										"required": false,
+										"description": "The user's evening telephone number"
+									},
+									"dpa_flag": {
+										"type": ["null","boolean"],
+										"id": "dpa_flag",
+										"required": false,
+										"description": "Indicates whether the user wishes for their data to be protected"
+									}
+								},
+								"additionalProperties": false
+							},
+							"user_information": {
+								"type": "object",
+								"required": true,
+								"description": "The information which the user provided within the email",
+								"properties": {
+									"move_date": {
+										"type": ["null","integer"],
+										"id": "move_date",
+										"required": false,
+										"description": "The date the user is looking to move: 1 ASAP, 2 January, 3 February, 4 March, 5 April, 6 May, 7 June, 8 July, 9 August 10, September, 11 October, 12 November, 13 December"
+									},
+									"moving_reason": {
+										"type": ["null","string"],
+										"id": "moving_reason",
+										"required": false,
+										"description": "Why the user is looking to move"
+									},
+									"property_to_sell": {
+										"type": ["null","integer"],
+										"id": "property_to_sell",
+										"required": false,
+										"description": "Indicates whether the user has a property to sell: 1 No, 2 Yes, it is not on the market yet, 3 Yes, it is on the market already, 4 Yes, it is under offer, 5 Yes, it is already exchanged, 6 Yes"
+									},
+									"property_to_rent": {
+										"type": ["null","integer"],
+										"id": "property_to_rent",
+										"required": false,
+										"description": "Indicates whether the user has a property to rent: 1 No, 2 Not yet, I intend to buy to let, 3 Yes, it is available to let now, 4 Yes, it will be available to let soon, 5 Yes, it is currently occupied, 6 Yes"
+									},
+									"financial_advice": {
+										"type": ["null","boolean"],
+										"id": "financial_advice",
+										"required": false,
+										"description": "Indicates whether the user wants financial advice"
+									},
+									"part_exchange": {
+										"type": ["null","boolean"],
+										"id": "part_exchange",
+										"required": false,
+										"description": "Indicates whether the user is interested in part exchange"
+									},
+									"comments": {
+										"type": ["null","string"],
+										"id": "comments",
+										"required": false,
+										"description": "Any further comments which the user has included"
+									}
+								},
+								"additionalProperties": false
+							}
+						},
+						"additionalProperties": false
+						}
+					}
+				},
+				"additionalProperties": false
+			},
+		"errors": {
+			"type": [
+				"array",
+				"null"
+			],
+			"required": false,
+			"description": "The errors causing the request to fail",
+			"minItems": 0,
+			"items": {
+				"type": [
+					"object",
+					"null"
+				],
+				"required": false,
+				"properties": {
+					"error_code": {
+						"type": "string",
+						"id": "error_code",
+						"required": true,
+						"description": "The unique Rightmove code for the error causing the request to fail"
+					},
+					"error_description":{
+						"type":"string",
+						"id":"error_description",
+						"required":true,
+						"description": "The full description of the error associated with the error code which has been generated"
+					},
+					"error_value":{
+						"type":["string", "null"],
+						"id":"error_value",
+						"required":false,
+						"description": "The value that caused this error"
+					}
+				},
+				"additionalProperties": false
+			},
+			"additionalProperties": false
+		},
+		"warnings": {
+			"type": [
+				"array",
+				"null"
+			],
+			"required": false,
+			"description": "The warning generated by the request",
+			"minItems": 0,
+			"items": {
+				"type": [
+					"object",
+					"null"
+				],
+				"required": false,
+				"properties": {
+					"warning_code": {
+						"type": "string",
+						"id": "warning_code",
+						"required": true,
+						"description": "The unique Rightmove warning code generated due to failure to pass all of the business rules"
+					},
+					"warning_description":{
+						"type":"string",
+						"id":"warning_description",
+						"required":true,
+						"description": "The full description of the warning associated with the warning code which has been generated"
+					},
+					"warning_value":{
+						"type":["string", "null"],
+						"id":"warning_value",
+						"required":false,
+						"description": "The value that caused this warning"
+					}
+				},
+				"additionalProperties": false
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+
+}

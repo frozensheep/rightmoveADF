@@ -1,0 +1,245 @@
+{
+	"description": "Rightmove Realtime Datafeed Json Schema for GetPropertyPerformance response",
+	"type": "object",
+	"properties": {
+		"request_id": {
+			"type": "string",
+			"required": true,
+			"description": "The unique ID of the request which this response is associated with"
+		},
+		"message": {
+			"type": "string",
+			"required": true,
+			"description": "The message content for the response"
+		},
+		"success": {
+			"type": "boolean",
+			"required": true,
+			"description": "Indicates whether or not the request was successful"
+		},
+		"request_timestamp": {
+			"type": "string",
+			"required": true,
+			"description": "The time at which the request was received in the format: dd-MM-yyyy HH:mm:ss"
+		},
+		"response_timestamp": {
+			"type": "string",
+			"required": true,
+			"description": "The time at which the response was sent in the format: dd-MM-yyyy HH:mm:ss"
+		},
+		"replication_lag": {
+			"type": ["integer", "null"],
+			"required": false,
+			"description": "The current lag time for replicating between the three Rightmove data centres in minutes"
+		},
+		"export_period": {
+			"type": ["object","null"],
+			"required": false,
+			"description": "The period for which property performance metrics are being exported",
+			"properties": {
+				"start_date": {
+					"type": "string",
+					"id": "start_date",
+					"required": true,
+					"description": "The start date for the export period in the format: dd-MM-yyyy - this cannot be more than 28 days ago"
+				},
+				"end_date":{
+					"type":"string",
+					"id":"end_date",
+					"required":true,
+					"description": "The end date for the export period in the format: dd-MM-yyyy - this cannot be more than 28 days ago"
+				}
+			},
+			"additionalProperties": false
+		},
+		"branch": {
+			"type": ["object","null"],
+			"required": false,
+			"description": "Information about the branch for which the metrics are being generated",
+			"properties": {
+				"branch_id": {
+					"type": "integer",
+					"id": "branch_id",
+					"required": true,
+					"description": "Unique Rightmove ID for the branch for which the performance metrics are being generated"
+				}
+			},
+			"additionalProperties": false
+		},
+        "property": {
+            "type": ["object","null"],
+            "description": "Details of the property which the performance metrics are being generated",
+            "required": false,
+            "properties": {
+                "agent_ref":{
+                    "type":"string",
+                    "id":"agent_ref",
+                    "required":true,
+                    "description":"Agent's unique reference for the property"
+                }
+            },
+            "additionalProperties": false
+        },
+		"property_views_daily": {
+			"type": ["array","null"],
+            "minItems": 0,
+            "maxItems": 28,
+            "required":false,
+            "id": "property_views_daily",
+            "description": "The total number of times a property has been viewed on Rightmove on the dates specified",
+            "items": {
+                "id": "property_view_daily",
+                "type": [
+                    "object",
+                    "null"
+                ],
+                "required": false,
+                "description": "The total number of times a property has been viewed on Rightmove on a specific date",
+                "properties": {
+                    "date": {
+                        "type": "string",
+                        "id": "date",
+                        "required": true,
+                        "description": "The date property performance metrics have been requested for"
+                    },
+                    "featured_property": {
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Y/N - was the property a featured property on this date?"
+                    },
+                    "premium_listing": {
+                        "type": "boolean",
+                        "required": true,
+                        "description": "Y/N - was the property a premium listing on this date?"
+                    },
+                    "summary_views": {
+                        "type": ["object","null"],
+                        "id": "summary_views",
+                        "required": false,
+                        "description": "Information on a property's summary views on Rightmove on the date specified",
+                        "properties": {
+                            "total_summary_views": {
+                                "type":"integer",
+                                "required":true,
+                                "description":"The total number of times the property has appeared in a summary view on the requested date"
+                            },
+                            "desktop_summary_views": {
+                                "type":"integer",
+                                "required":true,
+                                "description":"The total number of times the property has appeared in a summary view on the requested date, when viewed from a desktop PC"
+                            },
+                            "mobile_summary_views": {
+                                "type":"integer",
+                                "required":true,
+                                "description":"The total number of times the property has appeared in a summary view on the requested date, when viewed from a mobile device"
+                            }
+                        }
+                     },
+                    "detail_views": {
+                        "type": ["object","null"],
+                        "id": "detail_views",
+                        "required": false,
+                        "description": "Information on a property's detail views on Rightmove on the date specified",
+                        "properties": {
+                            "total_detail_views": {
+                                "type":"integer",
+                                "required":true,
+                                "description":"The total number of detail views of the property on the requested date"
+                            },
+                            "desktop_detail_views": {
+                                "type":"integer",
+                                "required":true,
+                                "description":"The total number of detail views of the property on the requested date, when viewed from a desktop PC"
+                            },
+                            "mobile_detail_views": {
+                                "type":"integer",
+                                "required":true,
+                                "description":"The total number of detail views of the property on the requested date, when viewed from a mobile device"
+                            }
+                        }
+                    }
+                  },
+                "additionalProperties": false
+                },
+            "additionalProperties": false
+        },
+		"errors": {
+			"type": [
+				"array",
+				"null"
+			],
+			"required": false,
+			"description": "The errors causing the request to fail",
+			"minItems": 0,
+			"items": {
+				"type": [
+					"object",
+					"null"
+				],
+				"required": false,
+				"properties": {
+					"error_code": {
+						"type": "string",
+						"id": "error_code",
+						"required": true,
+						"description": "The unique Rightmove code for the error causing the request to fail"
+					},
+					"error_description":{
+						"type":"string",
+						"id":"error_description",
+						"required":true,
+						"description": "The full description of the error associated with the error code which has been generated"
+					},
+					"error_value":{
+						"type":["string", "null"],
+						"id":"error_value",
+						"required":false,
+						"description": "The value that caused this error"
+					}
+				},
+				"additionalProperties": false
+			},
+			"additionalProperties": false
+		},
+		"warnings": {
+			"type": [
+				"array",
+				"null"
+			],
+			"required": false,
+			"description": "The warning generated by the request",
+			"minItems": 0,
+			"items": {
+				"type": [
+					"object",
+					"null"
+				],
+				"required": false,
+				"properties": {
+					"warning_code": {
+						"type": "string",
+						"id": "warning_code",
+						"required": true,
+						"description": "The unique Rightmove warning code generated due to failure to pass all of the business rules"
+					},
+					"warning_description":{
+						"type":"string",
+						"id":"warning_description",
+						"required":true,
+						"description": "The full description of the warning associated with the warning code which has been generated"
+					},
+					"warning_value":{
+						"type":["string", "null"],
+						"id":"warning_value",
+						"required":false,
+						"description": "The value that caused this warning"
+					}
+				},
+				"additionalProperties": false
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+
+}

@@ -1,0 +1,208 @@
+{
+	"description": "Rightmove Realtime Datafeed Json Schema for the get branch phone leads response",
+	"type": "object",
+	"properties": {
+		"request_id": {
+			"type": "string",
+			"required": true,
+			"description": "The unique ID of the request which this response is associated with"
+		},
+		"message": {
+			"type": "string",
+			"required": true,
+			"description": "The message content for the response"
+		},
+		"success": {
+			"type": "boolean",
+			"required": true,
+			"description": "Indicates whether or not the request was successful"
+		},
+		"request_timestamp": {
+			"type": "string",
+			"required": true,
+			"description": "The time at which the request was received in the format: dd-MM-yyyy HH:mm:ss"
+		},
+		"response_timestamp": {
+			"type": "string",
+			"required": true,
+			"description": "The time at which the response was sent in the format: dd-MM-yyyy HH:mm:ss"
+		},
+		"replication_lag": {
+			"type": ["integer", "null"],
+			"required": false,
+			"description": "The current lag time for replicating between the three Rightmove data centres in minutes"
+		},
+		"export_period": {
+			"type": ["object","null"],
+			"required": false,
+			"description": "The period for which phone leads are being exported",
+			"properties": {
+				"start_date_time": {
+					"type": "string",
+					"id": "start_date_time",
+					"required": true,
+					"description": "The start date/time for the export period in the format: dd-MM-yyyy HH:mm:ss - this cannot be more than 28 days ago"
+				},
+				"end_date_time":{
+					"type":"string",
+					"id":"end_date_time",
+					"required":true,
+					"description": "The end date/time for the export period in the format: dd-MM-yyyy HH:mm:ss - this cannot be more than 28 days ago"
+				}
+			},
+			"additionalProperties": false
+		},
+		"branch": {
+			"type": ["object","null"],
+			"required": false,
+			"description": "Details about which branch's phone leads are being retrieved",
+			"properties": {
+				"branch_id": {
+					"type": "integer",
+					"id": "branch_id",
+					"required": true,
+					"description": "Unique Rightmove ID for the branch for which the phone leads export is being generated"
+				}
+			},
+			"additionalProperties": false
+		},
+		"phone_calls": {
+			"type": [
+				"array",
+				"null"
+			],
+			"id": "phone_calls",
+			"description": "Details of all the telephone call leads sent for the branch during the export period",
+			"required": false,
+			"items": {
+				"type": "object",
+				"id": "phone_call",
+				"required": true,
+				"properties": {
+					"branch_number": {
+						"type": "string",
+						"id": "branch_number",
+						"required": true,
+						"description": "The branch phone number that the phone lead was made to"
+					},
+					"call_status": {
+						"type": "integer",
+						"id": "call_status",
+						"required": true,
+						"description": "Indicates whether the phone call connected and was answered: 1 Answered 2 Engaged 3 Unanswered 4 Abandoned 5 Missed 6 Withheld"
+					},
+					"call_start": {
+						"type": "string",
+						"id": "call_start",
+						"required": true,
+						"description": "The start time of the phone call, in the format: dd-MM-yyyy HH:mm:ss"
+					},
+					"caller_number": {
+						"type": "string",
+						"id": "caller_number",
+						"required": true,
+						"description": "Phone number from which the call originated or 'Withheld'"
+					},
+					"caller_location":{
+						"type": "string",
+						"id":"caller_location",
+						"required":true,
+						"description":"Physical Location of the caller, eg 'London'. Also generic values of 'Mobile' and 'Unknown'"
+					},
+					"duration":{
+						"type": "string",
+						"id":"duration",
+						"required":true,
+						"description":"The duration of the phone call, in the format: HH:mm:ss"
+					},
+                    "channel":{
+                        "type":["integer","null"],
+                        "id":"channel",
+                        "required":false,
+                        "enum":[1, 2, null],
+                        "description":"For dual branches it specifies what channel the phone lead was for: 1 Sales 2 Lettings"
+                    }
+					},
+				"additionalProperties": false
+				}
+			},
+		"errors": {
+			"type": [
+				"array",
+				"null"
+			],
+			"required": false,
+			"description": "The errors causing the request to fail",
+			"minItems": 0,
+			"items": {
+				"type": [
+					"object",
+					"null"
+				],
+				"required": false,
+				"properties": {
+					"error_code": {
+						"type": "string",
+						"id": "error_code",
+						"required": true,
+						"description": "The unique Rightmove code for the error causing the request to fail"
+					},
+					"error_description":{
+						"type":"string",
+						"id":"error_description",
+						"required":true,
+						"description": "The full description of the error associated with the error code which has been generated"
+					},
+					"error_value":{
+						"type":["string", "null"],
+						"id":"error_value",
+						"required":false,
+						"description": "The value that caused this error"
+					}
+				},
+				"additionalProperties": false
+			},
+			"additionalProperties": false
+		},
+		"warnings": {
+			"type": [
+				"array",
+				"null"
+			],
+			"required": false,
+			"description": "The warning generated by the request",
+			"minItems": 0,
+			"items": {
+				"type": [
+					"object",
+					"null"
+				],
+				"required": false,
+				"properties": {
+					"warning_code": {
+						"type": "string",
+						"id": "warning_code",
+						"required": true,
+						"description": "The unique Rightmove warning code generated due to failure to pass all of the business rules"
+					},
+					"warning_description":{
+						"type":"string",
+						"id":"warning_description",
+						"required":true,
+						"description": "The full description of the warning associated with the warning code which has been generated"
+					},
+					"warning_value":{
+						"type":["string", "null"],
+						"id":"warning_value",
+						"required":false,
+						"description": "The value that caused this warning"
+					}
+				},
+				"additionalProperties": false
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+
+}

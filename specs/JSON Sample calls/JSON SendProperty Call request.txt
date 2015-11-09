@@ -1,0 +1,113 @@
+{
+	"network":{
+		"network_id": 5
+	},
+	"branch":{
+		"branch_id": 1566,
+		"channel": 1,
+		"overseas": false
+	},
+	"property":{
+		"agent_ref": "02072013_0406",
+		"published": true,
+		"property_type": 2,
+		"status": 1,
+		"new_home": false,
+		"student_property": false,
+		"create_date": "02-07-2013 00:00:00",
+		"update_date": "02-07-2013 00:00:00",
+		"date_available": "02-07-2013 00:00:00",
+		"contract_months": 12,
+		"minimum_term": 12,
+		"let_type": 1,
+		"address":{
+			"house_name_number": "33",
+			"address_2": "Rightmove",
+			"address_3": "4th Floor",
+			"address_4": "Soho Square",
+			"town": "London",
+			"postcode_1": "W1D",
+			"postcode_2": "3QU",
+			"display_address": "Soho Square",
+			"latitude": 51.514899,
+			"longitude": -0.132587,
+			"pov_latitude": 51.51482,
+			"pov_longitude": -0.13249,
+			"pov_pitch": -16.78,
+			"pov_heading": 235.75,
+			"pov_zoom": 0
+		},
+		"price_information":{
+			"price": 1500,
+			"price_qualifier": 0,
+			"deposit": 1000,
+			"administration_fee": "100",
+			"rent_frequency": 1,
+			"tenure_type": 1,
+			"auction": false,
+			"tenure_unexpired_years": 999,
+			"price_per_unit_area": 10
+		},
+		"details":{
+			"summary": "Rightmove Test Property",
+			"description": "Testing full property schema with all the fields in the call for JSON",
+			"features": [
+				"Has own Drive",
+				"Garage included",
+				"Double Glazed"
+			],
+			"bedrooms": 2,
+			"bathrooms": 2,
+			"reception_rooms": 1,
+			"parking": [13],
+			"outside_space": [29],
+			"year_built": 999,
+			"internal_area": 100,
+			"internal_area_unit": 1,
+			"land_area": 100,
+			"land_area_unit": 1,
+			"floors": 5,
+			"entrance_floor": 1,
+			"condition": 1,
+			"accessibility": [42],
+			"heating": [1],
+			"furnished_type": 0,
+			"pets_allowed": true,
+			"smokers_considered": true,
+			"housing_benefit_considered": true,
+			"sharers_considered": true,
+			"burglar_alarm": true,
+			"washing_machine": true,
+			"dishwasher": true,
+			"all_bills_inc": true,
+			"water_bill_inc": true,
+			"gas_bill_inc": true,
+			"electricity_bill_inc": true,
+			"tv_licence_inc": true,
+			"sat_cable_tv_bill_inc": true,
+			"internet_bill_inc": true,
+			"business_for_sale": true,
+			"comm_use_class":[1,4],
+			"rooms": [ {
+				"room_name": "room1",
+				"room_description": "room1" ,
+				"room_length": 10.10,
+				"room_width": 20.20,
+				"room_dimension_unit": 5,
+				"room_photo_urls": ["http://www.rightmove.com/image1.JPG"]
+			} ]
+		},
+		"media": [ {
+			"media_type":1,
+			"media_url":"www.rightmove.com/image1.JPG",
+			"caption":"This is an image",
+			"sort_order":1,
+			"media_update_date": "02-07-2013 12:12:12"
+		} ],
+		"principal": {
+			"principal_email_address": "principal@rightmove.co.uk",
+			"auto_email_when_live": true,
+			"auto_email_updates": true
+		}
+	}
+}

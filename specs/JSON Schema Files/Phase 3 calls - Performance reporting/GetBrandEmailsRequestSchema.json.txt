@@ -1,0 +1,58 @@
+{
+	"description":"Rightmove Realtime Datafeed Json Schema for the get brand emails request",
+	"type":"object",
+	"properties":{
+		"network":{
+			"type":"object",
+			"id":"network",
+			"required":true,
+			"description":"Information about the network calling the API",
+			"properties":{
+				"network_id":{
+					"type":"integer",
+					"id":"network_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this network"
+				}
+			},
+			"additionalProperties":false
+		},
+		"brand":{
+			"type":"object",
+			"id":"brand",
+			"required":true,
+			"description":"Details about which brand's emails are being retrieved",
+			"properties":{
+				"brand_id":{
+					"type":"integer",
+					"id":"brand_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this brand"
+				}
+			},
+			"additionalProperties":false
+		},
+		"export_period":{
+			"type":"object",
+			"id":"export_period",
+			"required":true,
+			"description":"Defines the period for which emails are being exported",
+			"properties":{
+				"start_date_time":{
+					"type":"string",
+					"id":"start_date_time",
+					"required":true,
+					"description":"The timestamp for the start of the export period - this cannot be more than 28 days ago in the format: dd-MM-yyyy HH:mm:ss"
+				},
+				"end_date_time":{
+					"type":"string",
+					"id":"end_date_time",
+					"required":true,
+					"description":"The timestamp for the end of the export period - this cannot be more than 28 days ago in the format: dd-MM-yyyy HH:mm:ss"
+				}
+			},
+			"additionalProperties":false
+		}
+	},
+	"additionalProperties":false
+}

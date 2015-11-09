@@ -1,0 +1,9 @@
+{
+            "network":{
+                        "network_id": 0
+            },
+            "branch":{
+                        "branch_id": 12345,
+                        "channel": 1
+            }
+}

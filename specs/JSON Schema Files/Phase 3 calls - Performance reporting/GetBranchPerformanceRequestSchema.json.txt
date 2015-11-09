@@ -1,0 +1,43 @@
+{
+	"description":"Rightmove Realtime Datafeed Json Schema for the get branch performance request",
+	"type":"object",
+	"properties":{
+		"network":{
+			"type":"object",
+			"id":"network",
+			"required":true,
+			"description":"Information about the network calling the API",
+			"properties":{
+				"network_id":{
+					"type":"integer",
+					"id":"network_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this network"
+				}
+			},
+			"additionalProperties":false
+		},
+		"branch":{
+			"type":"object",
+			"id":"branch",
+			"required":true,
+			"description":"Details about which branch's performance metrics are being retrieved",
+			"properties":{
+				"branch_id":{
+					"type":"integer",
+					"id":"branch_id",
+					"required":true,
+					"description":"Unique Rightmove reference for this branch"
+				}
+			},
+			"additionalProperties":false
+		},
+		"export_date":{
+			"type":"string",
+			"id":"export_date",
+			"required":true,
+			"description":"The date for the export period - this cannot be more than 28 days ago, and can only be for a single date, in the format: dd-MM-yyyy"
+		}
+        },
+        "additionalProperties":false
+}
