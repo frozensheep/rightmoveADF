@@ -12,6 +12,18 @@
 *
 */
 
-Class Branch {
+namespace Frozensheep\RightmoveADF\Groups;
+
+use Frozensheep\RightmoveADF\Groups\GroupInterface;
+
+/**
+*	Branch Group Class
+*
+*	Class to handle Branch group.
+*
+*	@package		Frozensheep\RightmoveADF\Groups
+*
+*/
+class Branch implements GroupInterface {
 
 }

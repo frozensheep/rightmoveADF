@@ -1,28 +1,31 @@
 {
-    "name": "frozensheep/rightmoveADF",
-    "type": "library",
-    "version": "0.1",
-    "description": "API client library for the Rightmove Real Time Datafeed (ADF).",
-    "keywords": ["rightmove", "api", "adf"],
-    "homepage": "https://github.com/frozensheep/rightmoveADF",
-    "license": "MIT",
-    "authors": [
-    	{
-    		"name": "Jacob Wyke",
-    		"email": "hello@frozensheep.com",
-    		"homepage": "https://frozensheep.com",
-    		"role": "Developer"
-    	}
-    ],
-    "require": {
-        "php": ">=5.3.0"
-    },
-    "require-dev": {
+	"name": "frozensheep/rightmove-adf",
+	"type": "library",
+	"description": "API client library for the Rightmove Real Time Datafeed (ADF).",
+	"keywords": ["rightmove", "api", "adf"],
+	"homepage": "https://github.com/frozensheep/rightmoveADF",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Jacob Wyke",
+			"email": "jacob@frozensheep.com",
+			"homepage": "https://frozensheep.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "/vagrant/synthesize"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"frozensheep/synthesize": "dev-master"
+	},
 
-    },
-    "autoload": {
-        "psr-0": {
-            "RightmoveADF": "src/"
-        }
-    }
+	"autoload": {
+		"psr-4": {
+			"Frozensheep\\RightmoveADF\\": "src"
+		}
+	}
 }

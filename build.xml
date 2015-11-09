@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PULSE" default="build">
+	<target name="build" depends="prepare,lint,phpdoc,phpunit"/>
+
+	<target name="clean" description="Cleanup build">
+		<delete dir="${project.basedir}/_build" />
+	</target>
+
+	<target name="prepare" depends="clean" description="Prepare for build">
+		<mkdir dir="${project.basedir}/docs" />
+		<mkdir dir="${project.basedir}/_build/logs/lint" />
+		<mkdir dir="${project.basedir}/_build/logs/phpunit" />
+	</target>
+
+	<target name="insertTags.loop" description="loops through all the files">
+		<foreach param="filename" absparam="absfilename" target="insertTags">
+			<fileset dir="${project.basedir}">
+				<patternset>
+					<include pattern="**/*.php" />
+					<exclude pattern="_*/**" />
+				</patternset>
+			</fileset>
+		</foreach>
+	</target>
+	
+	<target name="insertTags" description="Updates all tags in files with relevent text values">
+		<reflexive file="${project.basedir}/${filename}">
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="\@\@COPYRIGHT\@\@" replace="2013 frozensheep Ltd." />
+					<regexp pattern="\@\@RELEASE\_VERSION\@\@" replace="1.0.0" />
+					<regexp pattern="\@\@FILE\@\@" replace="/${filename}" />					
+				</replaceregexp>
+			</filterchain>
+		</reflexive>
+	</target>
+	
+	<target name="phpdoc" depends="prepare">
+		<phpdoc2 title="RightmoveADF Documentation" destdir="${project.basedir}/docs" template="responsive">
+			<fileset dir="${project.basedir}/src">
+				<include name="**/*.php" />
+			</fileset>
+			<fileset dir="${project.basedir}/tests">
+				<include name="**/*.php" />
+			</fileset>
+			<fileset dir="${project.basedir}/examples">
+				<include name="**/*.php" />
+			</fileset>
+		</phpdoc2>
+	</target>
+	
+	<target name="lint">
+		<phplint tofile="${project.basedir}/_build/logs/lint/errors.txt" haltonfailure="true">
+			<fileset dir="${project.basedir}/src">
+				<include name="**/*.php" />
+			</fileset>
+
+			<fileset dir="${project.basedir}/tests">
+				<include name="**/*.php" />
+			</fileset>
+
+			<fileset dir="${project.basedir}/examples">
+				<include name="**/*.php" />
+			</fileset>
+		</phplint>
+	</target>
+	
+	<target name="phpunit">
+		<phpunit bootstrap="${project.basedir}/vendor/autoload.php" haltonfailure="true" haltonerror="true" printsummary="true">
+			<formatter type="xml" todir="${project.basedir}/_build/logs/phpunit"/>
+			<batchtest>
+				<fileset dir="${project.basedir}">
+					<include name="**/*Test.php"/>
+				</fileset>
+			</batchtest>
+		</phpunit>
+	</target>
+
+</project>
