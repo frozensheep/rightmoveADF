@@ -16,7 +16,7 @@ require_once('../vendor/autoload.php');
 
 use Frozensheep\RightmoveADF\Groups\Network;
 
-$objAddress = new Network();
-$objAddress->networkID = '12345';
+$objNetwork = new Network();
+$objNetwork->networkID = '12345';
 
-echo $objAddress->networkID.PHP_EOL;
+echo $objNetwork->networkID.PHP_EOL;
