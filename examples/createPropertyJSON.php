@@ -12,11 +12,10 @@
 *
 */
 
-require_once('../vendor/autoload.php');
+require_once(__DIR__.'/../vendor/autoload.php');
 
-use Frozensheep\RightmoveADF\Groups\Network;
+use Frozensheep\RightmoveADF\Request\SendProperty;
 
-$objNetwork = new Network();
-$objNetwork->networkID = '12345';
+$objRequest = new SendProperty();
 
-echo $objNetwork->networkID.PHP_EOL;
+echo json_encode($objRequest);
