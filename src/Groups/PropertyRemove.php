@@ -1,6 +1,6 @@
 <?php
 /**
-*	This file contains the Branch Group model class.
+*	This file contains the Property Remove Group model class.
 *
 *	@package		RightmoveADF
 *	@version		@@RELEASE_VERSION@@
@@ -17,21 +17,22 @@ namespace Frozensheep\RightmoveADF\Groups;
 use Frozensheep\RightmoveADF\Groups\GroupInterface;
 use Frozensheep\Synthesize\Synthesizer;
 
+
 /**
-*	Branch Group Class
+*	Property Remove Group Class
 *
-*	Class to handle Branch group.
+*	Class to handle Property group.
 *
 *	@package		Frozensheep\RightmoveADF\Groups
 *
 */
-class Branch implements GroupInterface, \JsonSerializable {
+class PropertyRemove implements GroupInterface, \JsonSerializable {
 
 	use Synthesizer;
 
 	protected $arrSynthesize = array(
-		'branch_id' => array('type' => 'int', 'required' => true),
-		'channel' => array('type' => 'int', 'required' => true),
-		'overseas' => array('type' => 'boolean')
+		'agent_ref' => array('type' => 'string', 'required' => true, 'max' => 80),
+		'removal_reason' => array('type' => 'int'),
+		'transaction_date' => array('type' => 'datetime', 'format' => 'd-m-Y G:i:s')
 	);
 }

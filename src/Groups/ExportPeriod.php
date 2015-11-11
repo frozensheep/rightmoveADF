@@ -1,6 +1,6 @@
 <?php
 /**
-*	This file contains the Branch Group model class.
+*	This file contains the Export Period Group model class.
 *
 *	@package		RightmoveADF
 *	@version		@@RELEASE_VERSION@@
@@ -18,20 +18,19 @@ use Frozensheep\RightmoveADF\Groups\GroupInterface;
 use Frozensheep\Synthesize\Synthesizer;
 
 /**
-*	Branch Group Class
+*	Export Period Group Class
 *
-*	Class to handle Branch group.
+*	Class to handle Export Period group.
 *
 *	@package		Frozensheep\RightmoveADF\Groups
 *
 */
-class Branch implements GroupInterface, \JsonSerializable {
+class ExportPeriod implements GroupInterface, \JsonSerializable {
 
 	use Synthesizer;
 
 	protected $arrSynthesize = array(
-		'branch_id' => array('type' => 'int', 'required' => true),
-		'channel' => array('type' => 'int', 'required' => true),
-		'overseas' => array('type' => 'boolean')
+		'start_date' => array('type' => 'datetime', 'format' => 'd-m-Y', 'required' => true),
+		'end_date' => array('type' => 'datetime', 'format' => 'd-m-Y', 'required' => true)
 	);
 }

@@ -15,6 +15,7 @@
 namespace Frozensheep\RightmoveADF\Groups;
 
 use Frozensheep\RightmoveADF\Groups\GroupInterface;
+use Frozensheep\Synthesize\Synthesizer;
 
 /**
 *	Principal Group Class
@@ -24,6 +25,13 @@ use Frozensheep\RightmoveADF\Groups\GroupInterface;
 *	@package		Frozensheep\RightmoveADF\Groups
 *
 */
-class Principal implements GroupInterface {
+class Principal implements GroupInterface, \JsonSerializable {
 
+	use Synthesizer;
+
+	protected $arrSynthesize = array(
+		'principal_email_address' => array('type' => 'string', 'required' => true, 'max' => 200),
+		'auto_email_when_live' => array('type' => 'boolean'),
+		'auto_email_updates' => array('type' => 'boolean')
+	);
 }

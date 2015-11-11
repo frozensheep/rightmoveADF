@@ -1,6 +1,6 @@
 <?php
 /**
-*	This file contains the Group Interface class.
+*	This file contains the Request Interface class.
 *
 *	@package		RightmoveADF
 *	@version		@@RELEASE_VERSION@@
@@ -12,16 +12,16 @@
 *
 */
 
-namespace Frozensheep\RightmoveADF\Groups;
+namespace Frozensheep\RightmoveADF\Request;
 
 /**
-*	Group Interface Class
+*	Request Interface Class
 *
-*	Interface for all of the Groups.
+*	Interface for all requests.
 *
-*	@package		Frozensheep\RightmoveADF\Groups
+*	@package		Frozensheep\RightmoveADF\Request
 *
 */
-interface GroupInterface {
+interface RequestInterface {
 
 }

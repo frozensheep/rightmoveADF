@@ -1,6 +1,6 @@
 <?php
 /**
-*	This file contains the Group Interface class.
+*	This file contains the Brand Group model class.
 *
 *	@package		RightmoveADF
 *	@version		@@RELEASE_VERSION@@
@@ -14,14 +14,22 @@
 
 namespace Frozensheep\RightmoveADF\Groups;
 
+use Frozensheep\RightmoveADF\Groups\GroupInterface;
+use Frozensheep\Synthesize\Synthesizer;
+
 /**
-*	Group Interface Class
+*	Brand Group Class
 *
-*	Interface for all of the Groups.
+*	Class to handle Brand group.
 *
 *	@package		Frozensheep\RightmoveADF\Groups
 *
 */
-interface GroupInterface {
+class Brand implements GroupInterface, \JsonSerializable {
 
+	use Synthesizer;
+
+	protected $arrSynthesize = array(
+		'brand_id' => array('type' => 'int', 'required' => true)
+	);
 }

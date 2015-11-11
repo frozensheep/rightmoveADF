@@ -25,15 +25,11 @@ use Frozensheep\Synthesize\Synthesizer;
 *	@package		Frozensheep\RightmoveADF\Groups
 *
 */
-class Network implements GroupInterface {
+class Network implements GroupInterface, \JsonSerializable {
 
 	use Synthesizer;
 
 	protected $arrSynthesize = array(
-		'networkID' => array('type' => 'String')
+		'network_id' => array('type' => 'int', 'required' => true)
 	);
-
-	public function test(){
-		return 0;
-	}
 }

@@ -15,6 +15,7 @@
 namespace Frozensheep\RightmoveADF\Groups;
 
 use Frozensheep\RightmoveADF\Groups\GroupInterface;
+use Frozensheep\Synthesize\Synthesizer;
 
 /**
 *	Media Group Class
@@ -24,6 +25,15 @@ use Frozensheep\RightmoveADF\Groups\GroupInterface;
 *	@package		Frozensheep\RightmoveADF\Groups
 *
 */
-class Media implements GroupInterface {
+class Media implements GroupInterface, \JsonSerializable {
 
+	use Synthesizer;
+
+	protected $arrSynthesize = array(
+		'media_type' => array('type' => 'int', 'required' => true),
+		'media_url' => array('type' => 'string', 'required' => true, 'max' => 250),
+		'caption' => array('type' => 'string', 'max' => 50),
+		'sort_order' => array('type' => 'int', 'min' => 0),
+		'media_update_date' => array('type' => 'datetime', 'format' => 'd-m-Y G:i:s')
+	);
 }
