@@ -4,7 +4,7 @@
 *
 *	@package		RightmoveADF
 *	@version		@@RELEASE_VERSION@@
-*	@author		Jacob Wyke <jacob@frozensheep.com>
+*	@author			Jacob Wyke <jacob@frozensheep.com>
 *	@copyright		@@COPYRIGHT@@
 *	@file			@@FILE@@
 *	@file_Version	$Rev: 1937 $
@@ -17,5 +17,8 @@ require_once(__DIR__.'/../vendor/autoload.php');
 use Frozensheep\RightmoveADF\Request\SendProperty;
 
 $objRequest = new SendProperty();
+$objRequest->network->network_id = 12345;
+$objRequest->branch->branch_id = 22934;
+$objRequest->branch->channel = 2;
 
 echo json_encode($objRequest);

@@ -2,13 +2,9 @@
 /**
 *	This file contains the Branch Group model class.
 *
-*	@package		RightmoveADF
-*	@version		@@RELEASE_VERSION@@
-*	@author			Jacob Wyke <jacob@frozensheep.com>
-*	@copyright		@@COPYRIGHT@@
-*	@file			@@FILE@@
-*	@file_Version	$Rev: 1937 $
-*	@Last_Change	$LastChangedDate: 2014-11-27 10:18:05 +0000 (Thu, 27 Nov 2014) $
+*	@package	Frozensheep\RightmoveADF
+*	@author		Jacob Wyke <jacob@frozensheep.com>
+*	@license	MIT
 *
 */
 
@@ -16,6 +12,7 @@ namespace Frozensheep\RightmoveADF\Groups;
 
 use Frozensheep\RightmoveADF\Groups\GroupInterface;
 use Frozensheep\Synthesize\Synthesizer;
+use Frozensheep\RightmoveADF\Values\Channels;
 
 /**
 *	Branch Group Class
@@ -31,7 +28,7 @@ class Branch implements GroupInterface, \JsonSerializable {
 
 	protected $arrSynthesize = array(
 		'branch_id' => array('type' => 'int', 'required' => true),
-		'channel' => array('type' => 'int', 'required' => true),
+		'channel' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\Channels', 'required' => true),
 		'overseas' => array('type' => 'boolean')
 	);
 }

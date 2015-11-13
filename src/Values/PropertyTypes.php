@@ -2,13 +2,9 @@
 /**
 *	This file contains the Property Types Enum class.
 *
-*	@package		RightmoveADF
-*	@version		@@RELEASE_VERSION@@
-*	@author			Jacob Wyke <jacob@frozensheep.com>
-*	@copyright		@@COPYRIGHT@@
-*	@file			@@FILE@@
-*	@file_Version	$Rev: 1937 $
-*	@Last_Change	$LastChangedDate: 2014-11-27 10:18:05 +0000 (Thu, 27 Nov 2014) $
+*	@package	Frozensheep\RightmoveADF
+*	@author		Jacob Wyke <jacob@frozensheep.com>
+*	@license	MIT
 *
 */
 
@@ -36,7 +32,7 @@ class PropertyTypes extends Enum {
 	const GroundFloorFlat = 7;
 	const Flat = 8;
 	const StudioFlat = 9;
-	const GroundFloorMaisonette	= 10;
+	const GroundFloorMaisonette = 10;
 	const Maisonette = 11;
 	const Bungalow = 12;
 	const TerracedBungalow = 13;
