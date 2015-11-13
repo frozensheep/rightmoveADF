@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Media Types Enum Class
 *
 *	Class for the different media types.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class MediaTypes extends Enum {
+class MediaTypes extends ValuesBase {
 
 	const Image = 1;
 	const Floorplan = 2;

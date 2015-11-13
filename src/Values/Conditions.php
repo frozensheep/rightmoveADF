@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Conditons Enum Class
 *
 *	Class for the different Conditons.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class Conditons extends Enum {
+class Conditons extends ValuesBase {
 
 	const Good = 1;
 	const SomeWorkNeeded = 2;

@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Accessibilites Enum Class
 *
 *	Class for the different Accessibility options.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class Accessibilites extends Enum {
+class Accessibilites extends ValuesBase {
 
 	const NotSuitableForWheelchairUsers = 42;
 	const LevelAccess = 37;

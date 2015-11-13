@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Parkings Enum Class
 *
 *	Class for the different parking options.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class Parkings extends Enum {
+class Parkings extends ValuesBase {
 
 	const Allocated = 13;
 	const Communal = 14;
@@ -32,6 +32,6 @@ class Parkings extends Enum {
 	const OnStreet = 20;
 	const Rear = 21;
 	const Permit = 22;
-	const Private = 23;
+	const PrivateParking = 23;
 	const Residents = 24;
 }

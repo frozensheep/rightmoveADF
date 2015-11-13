@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Channels Enum Class
 *
 *	Class for the different channel options.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class Channels extends Enum {
+class Channels extends ValuesBase {
 
     const Sales = 1;
     const Lettings = 2;

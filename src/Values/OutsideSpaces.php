@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Outside Spaces Enum Class
 *
 *	Class for the different outside spaces.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class OutsideSpaces extends Enum {
+class OutsideSpaces extends ValuesBase {
 
 	const BackGarden = 29;
 	const CommunalGarden = 30;

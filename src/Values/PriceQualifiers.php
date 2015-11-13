@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Price Qualifiers Enum Class
 *
 *	Class for the different price qualifiers.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class PriceQualifiers extends Enum {
+class PriceQualifiers extends ValuesBase {
 
 	const Default = 0;
 	const POA = 1;

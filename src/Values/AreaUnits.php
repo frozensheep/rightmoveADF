@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Area Units Enum Class
 *
 *	Class for the different area units.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class AreaUnits extends Enum {
+class AreaUnits extends ValuesBase {
 
 	const SqFt = 1;
 	const SqM = 2;

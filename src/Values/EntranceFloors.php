@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Entrance Floors Enum Class
 *
 *	Class for the different entrance floors.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class EntranceFloors extends Enum {
+class EntranceFloors extends ValuesBase {
 
 	const Basement = 1;
 	const GroundFloor = 2;

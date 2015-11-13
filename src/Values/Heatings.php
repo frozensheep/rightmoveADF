@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Heatings Enum Class
 *
 *	Class for the different Heating options.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class Heatings extends Enum {
+class Heatings extends ValuesBase {
 
 	const AirConditioning = 1;
 	const Central = 2;

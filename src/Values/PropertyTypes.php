@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Property Types Enum Class
 *
 *	Class for the different property types.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class PropertyTypes extends Enum {
+class PropertyTypes extends ValuesBase {
 
 	const NotSpecified = 0;
 	const TerracedHouse = 1;

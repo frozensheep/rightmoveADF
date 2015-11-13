@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Furnishings Enum Class
 *
 *	Class for the different Furnishing options.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class Furnishings extends Enum {
+class Furnishings extends ValuesBase {
 
 	const Furnished = 0;
 	const Part-furnished = 1;

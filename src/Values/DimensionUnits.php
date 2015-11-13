@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Dimension Units Enum Class
 *
 *	Class for the different dimension units.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class DimensionUnits extends Enum {
+class DimensionUnits extends ValuesBase {
 
     const Metres =  5;
     const Centimetres = 6;

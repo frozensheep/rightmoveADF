@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Statuses Enum Class
 *
 *	Class for the different statuses.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class Statuses extends Enum {
+class Statuses extends ValuesBase {
 
 	const Available = 1;
 	const SSTC = 2;

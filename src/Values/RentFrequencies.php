@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Rent Frequencies Enum Class
 *
 *	Class for the different rent frequencies.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class RentFrequencies extends Enum {
+class RentFrequencies extends ValuesBase {
 
 	const Yearly = 1;
 	const Quarterly = 4;

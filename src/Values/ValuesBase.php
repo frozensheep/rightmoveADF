@@ -10,7 +10,7 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use Frozensheep\RightmoveADF\Values\ValuesBase;
+use MyCLabs\Enum\Enum;
 
 /**
 *	Tenure Types Enum Class
@@ -20,11 +20,15 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 *	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class TenureTypes extends ValuesBase {
+class ValuesBase extends Enum implements \JsonSerializable  {
 
-	const Freehold = 1;
-	const Leasehold = 2;
-	const Feudal = 3;
-	const Commonhold = 4;
-	const ShareOfFreehold = 5;
+	/**
+	*	JSON Serialise Method
+	*
+	*	Method for the \JsonSerializable Interface.
+	*	@return mixed
+	*/
+	public function jsonSerialize(){
+		return $this->getValue();
+	}
 }

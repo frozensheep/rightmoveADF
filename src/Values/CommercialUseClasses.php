@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Commercial Use Classes Enum Class
 *
 *	Class for the different commercial use classes.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class CommercialUseClasses extends Enum {
+class CommercialUseClasses extends ValuesBase {
 
 	const A1 = 1;
 	const A2 = 4;

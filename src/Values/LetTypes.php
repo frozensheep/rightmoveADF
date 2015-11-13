@@ -10,17 +10,17 @@
 
 namespace Frozensheep\RightmoveADF\Values;
 
-use MyCLabs\Enum\Enum;
+use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
 *	Let Types Enum Class
 *
 *	Class for the different let types.
 *
-*	@package		Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF\Values
 *
 */
-class LetTypes extends Enum {
+class LetTypes extends ValuesBase {
 
 	const LongTerm = 1;
 	const ShortTerm = 2;
