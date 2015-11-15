@@ -15,7 +15,7 @@ namespace Frozensheep\RightmoveADF\Groups;
 *
 *	Interface for all of the Groups.
 *
-*	@package		Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF\Groups
 *
 */
 interface GroupInterface {

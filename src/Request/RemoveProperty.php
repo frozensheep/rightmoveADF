@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Groups\PropertyRemove;
 *
 *	Class for remove property request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class RemoveProperty implements RequestInterface, \JsonSerializable {

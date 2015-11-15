@@ -20,7 +20,7 @@ use Frozensheep\RightmoveADF\Groups\Branch;
 *
 *	Class for the get branch performance request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetBranchPerformance implements RequestInterface, \JsonSerializable  {

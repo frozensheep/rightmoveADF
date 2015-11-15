@@ -18,7 +18,7 @@ use Frozensheep\Synthesize\Synthesizer;
 *
 *	Class to handle Export Period group.
 *
-*	@package		Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF\Groups
 *
 */
 class ExportPeriod implements GroupInterface, \JsonSerializable {

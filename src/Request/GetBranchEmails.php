@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 *
 *	Class for the get branch emails request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetBranchEmails implements RequestInterface, \JsonSerializable  {

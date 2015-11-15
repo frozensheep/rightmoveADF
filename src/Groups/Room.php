@@ -12,13 +12,14 @@ namespace Frozensheep\RightmoveADF\Groups;
 
 use Frozensheep\RightmoveADF\Groups\GroupInterface;
 use Frozensheep\Synthesize\Synthesizer;
+use Frozensheep\RightmoveADF\Values\DimensionUnits;
 
 /**
 *	Room Group Class
 *
 *	Class to handle Room group.
 *
-*	@package		Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF\Groups
 *
 */
 class Room implements GroupInterface, \JsonSerializable {
@@ -30,8 +31,8 @@ class Room implements GroupInterface, \JsonSerializable {
 		'room_description' => array('type' => 'string', 'max' => 1000),
 		'room_length' => array('type' => 'number', 'min' => 0),
 		'room_width' => array('type' => 'number', 'min' => 0),
-		'room_dimension_unit' => array('type' => 'int'),
+		'room_dimension_unit' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\DimensionUnits'),
 		'room_dimension_text' => array('type' => 'string', 'max' => 120),
-		'room_photo_urls' => array('type' => 'dictionary'),
+		'room_photo_urls' => array('type' => 'objectarray', 'class' => 'Frozensheep\Synthesize\Type\String', 'max' => 10),
 	);
 }

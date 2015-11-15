@@ -22,7 +22,7 @@ use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 *
 *	Class for get property performance request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetPropertyPerformance implements RequestInterface, \JsonSerializable  {

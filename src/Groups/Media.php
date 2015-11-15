@@ -12,13 +12,14 @@ namespace Frozensheep\RightmoveADF\Groups;
 
 use Frozensheep\RightmoveADF\Groups\GroupInterface;
 use Frozensheep\Synthesize\Synthesizer;
+use Frozensheep\RightmoveADF\Values\MediaTypes;
 
 /**
 *	Media Group Class
 *
 *	Class to handle Media group.
 *
-*	@package		Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF\Groups
 *
 */
 class Media implements GroupInterface, \JsonSerializable {
@@ -26,7 +27,7 @@ class Media implements GroupInterface, \JsonSerializable {
 	use Synthesizer;
 
 	protected $arrSynthesize = array(
-		'media_type' => array('type' => 'int', 'required' => true),
+		'media_type' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\MediaTypes' 'required' => true),
 		'media_url' => array('type' => 'string', 'required' => true, 'max' => 250),
 		'caption' => array('type' => 'string', 'max' => 50),
 		'sort_order' => array('type' => 'int', 'min' => 0),

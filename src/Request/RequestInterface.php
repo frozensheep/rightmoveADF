@@ -15,7 +15,7 @@ namespace Frozensheep\RightmoveADF\Request;
 *
 *	Interface for all requests.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 interface RequestInterface {

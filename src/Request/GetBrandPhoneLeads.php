@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 *
 *	Class for the get brand phone leads request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetBrandPhoneLeads implements RequestInterface, \JsonSerializable  {

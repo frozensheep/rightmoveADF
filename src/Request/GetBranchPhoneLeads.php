@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 *
 *	Class for the get branch phone leads request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetBranchPhoneLeads implements RequestInterface, \JsonSerializable  {

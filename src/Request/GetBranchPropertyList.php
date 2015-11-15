@@ -20,7 +20,7 @@ use Frozensheep\RightmoveADF\Groups\Branch;
 *
 *	Class for get branch property list request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetBranchPropertyList implements RequestInterface, \JsonSerializable  {

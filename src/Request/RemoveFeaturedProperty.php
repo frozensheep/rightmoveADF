@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Groups\PropertyFeature;
 *
 *	Class for the remove featured property request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class RemoveFeaturedProperty implements RequestInterface, \JsonSerializable  {

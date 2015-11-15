@@ -18,7 +18,7 @@ use Frozensheep\Synthesize\Synthesizer;
 *
 *	Class to handle Address group.
 *
-*	@package		Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF\Groups
 *
 */
 class Address implements GroupInterface, \JsonSerializable {

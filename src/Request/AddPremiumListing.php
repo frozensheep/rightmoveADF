@@ -22,7 +22,7 @@ use Frozensheep\RightmoveADF\Groups\PremiumListing;
 *
 *	Class for the add premium listing request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class AddPremiumListing implements RequestInterface, \JsonSerializable  {

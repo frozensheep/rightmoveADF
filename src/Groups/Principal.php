@@ -18,7 +18,7 @@ use Frozensheep\Synthesize\Synthesizer;
 *
 *	Class to handle Principal group.
 *
-*	@package		Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF\Groups
 *
 */
 class Principal implements GroupInterface, \JsonSerializable {

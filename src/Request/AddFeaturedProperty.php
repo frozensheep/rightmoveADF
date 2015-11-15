@@ -22,7 +22,7 @@ use Frozensheep\RightmoveADF\Groups\FeaturedProperty;
 *
 *	Class for the add featured property request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class AddFeaturedProperty implements RequestInterface, \JsonSerializable  {

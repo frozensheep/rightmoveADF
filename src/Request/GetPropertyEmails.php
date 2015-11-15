@@ -22,7 +22,7 @@ use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 *
 *	Class for the get property emails request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetPropertyEmails implements RequestInterface, \JsonSerializable  {

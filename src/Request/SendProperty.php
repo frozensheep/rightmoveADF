@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Groups\Property;
 *
 *	Class for the send property request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class SendProperty implements RequestInterface, \JsonSerializable {

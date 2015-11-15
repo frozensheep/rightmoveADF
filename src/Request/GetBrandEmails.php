@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 *
 *	Class for the get brand emails request.
 *
-*	@package		Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF\Request
 *
 */
 class GetBrandEmails implements RequestInterface, \JsonSerializable  {

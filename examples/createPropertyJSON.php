@@ -20,5 +20,26 @@ $objRequest = new SendProperty();
 $objRequest->network->network_id = 12345;
 $objRequest->branch->branch_id = 22934;
 $objRequest->branch->channel = 2;
+$objRequest->property->details->summary = 'This is a summary';
+$objRequest->property->details->features[] = '1';
+$objRequest->property->details->features[] = '2';
+$objRequest->property->details->features[] = '3';
+$objRequest->property->details->features[] = '4';
+$objRequest->property->details->features[] = '5';
+$objRequest->property->details->features[] = '6';
+$objRequest->property->details->features[] = '7';
+$objRequest->property->details->features[] = '8';
+$objRequest->property->details->features[] = '9';
+$objRequest->property->details->features[] = '10';
+$objRequest->property->details->features[] = '11';
+$objRequest->property->details->parking[] = Frozensheep\RightmoveADF\Values\Parkings::Driveway;
+$objRequest->property->details->parking[] = Frozensheep\RightmoveADF\Values\Parkings::Garage;
+$objRequest->property->details->parking[] = Frozensheep\RightmoveADF\Values\Parkings::OnStreet;
 
-echo json_encode($objRequest);
+
+$objRoom1 = new Frozensheep\RightmoveADF\Groups\Room;
+$objRoom1->room_name = 'Living Room';
+$objRequest->property->details->rooms[] = $objRoom1;
+
+
+echo json_encode($objRequest).PHP_EOL;
