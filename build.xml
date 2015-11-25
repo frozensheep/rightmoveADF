@@ -22,19 +22,7 @@
 			</fileset>
 		</foreach>
 	</target>
-	
-	<target name="insertTags" description="Updates all tags in files with relevent text values">
-		<reflexive file="${project.basedir}/${filename}">
-			<filterchain>
-				<replaceregexp>
-					<regexp pattern="\@\@COPYRIGHT\@\@" replace="2013 frozensheep Ltd." />
-					<regexp pattern="\@\@RELEASE\_VERSION\@\@" replace="1.0.0" />
-					<regexp pattern="\@\@FILE\@\@" replace="/${filename}" />					
-				</replaceregexp>
-			</filterchain>
-		</reflexive>
-	</target>
-	
+
 	<target name="phpdoc" depends="prepare">
 		<phpdoc2 title="RightmoveADF Documentation" destdir="${project.basedir}/docs" template="responsive">
 			<fileset dir="${project.basedir}/src">
@@ -48,7 +36,7 @@
 			</fileset>
 		</phpdoc2>
 	</target>
-	
+
 	<target name="lint">
 		<phplint tofile="${project.basedir}/_build/logs/lint/errors.txt" haltonfailure="true">
 			<fileset dir="${project.basedir}/src">
@@ -64,7 +52,7 @@
 			</fileset>
 		</phplint>
 	</target>
-	
+
 	<target name="phpunit">
 		<phpunit bootstrap="${project.basedir}/vendor/autoload.php" haltonfailure="true" haltonerror="true" printsummary="true">
 			<formatter type="xml" todir="${project.basedir}/_build/logs/phpunit"/>
