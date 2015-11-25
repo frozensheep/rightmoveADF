@@ -2,7 +2,7 @@
 	"name": "frozensheep/rightmove-adf",
 	"type": "library",
 	"description": "API client library for the Rightmove Real Time Datafeed (ADF).",
-	"keywords": ["rightmove", "api", "adf"],
+	"keywords": ["rightmove", "api", "adf", "property", "renting", "sales", "real estate", "data feed", "feed"],
 	"homepage": "https://github.com/frozensheep/rightmoveADF",
 	"license": "MIT",
 	"authors": [
