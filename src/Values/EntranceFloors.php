@@ -24,8 +24,8 @@ class EntranceFloors extends ValuesBase {
 
 	const Basement = 1;
 	const GroundFloor = 2;
-	const 1stFloor = 3;
-	const 2ndFloor = 4;
+	const FirstFloor = 3;
+	const SecondFloor = 4;
 	const HigherThan2ndFloorNoLift = 5;
 	const HigherThan2ndFloorWithLift = 6;
 }

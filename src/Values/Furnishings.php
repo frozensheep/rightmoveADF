@@ -23,7 +23,7 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 class Furnishings extends ValuesBase {
 
 	const Furnished = 0;
-	const Part-furnished = 1;
+	const PartFurnished = 1;
 	const Unfurnished = 2;
 	const FurnishedUnfurnished = 4;
 }

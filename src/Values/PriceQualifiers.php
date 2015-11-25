@@ -22,7 +22,7 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 */
 class PriceQualifiers extends ValuesBase {
 
-	const Default = 0;
+	const Defaults = 0;
 	const POA = 1;
 	const GuidePrice = 2;
 	const FixedPrice = 3;

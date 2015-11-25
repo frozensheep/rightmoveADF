@@ -71,7 +71,7 @@ class PropertyTypes extends ValuesBase {
 	const Ruins = 77;
 	const Restaurant = 80;
 	const Cafe = 83;
-	const Mill = 86;
+	const Mill2 = 86; //check this one out in the spec as the examples could be wrong
 	const Castle = 92;
 	const VillageHouse = 95;
 	const CaveHouse = 101;
@@ -101,7 +101,7 @@ class PropertyTypes extends ValuesBase {
 	const RetailPropertyHighStreet = 187;
 	const RetailPropertyOutOfTown = 190;
 	const ConvenienceStore = 193;
-	const Garages = 196;
+	const Garages2 = 196; //possible duplicate
 	const HairdresserBarberShop = 199;
 	const Hotel = 202;
 	const PetrolStation = 205;
