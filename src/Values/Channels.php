@@ -17,7 +17,7 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 *
 *	Class for the different channel options.
 *
-*	@package	Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Channels extends ValuesBase {

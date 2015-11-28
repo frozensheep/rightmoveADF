@@ -17,7 +17,7 @@ use MyCLabs\Enum\Enum;
 *
 *	Class for the different tenure types.
 *
-*	@package	Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class ValuesBase extends Enum implements \JsonSerializable  {

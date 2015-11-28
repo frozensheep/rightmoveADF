@@ -17,7 +17,7 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 *
 *	Class for the different tenure types.
 *
-*	@package	Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class TenureTypes extends ValuesBase {

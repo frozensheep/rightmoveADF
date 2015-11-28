@@ -17,7 +17,7 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 *
 *	Class for the different parking options.
 *
-*	@package	Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Parkings extends ValuesBase {

@@ -17,7 +17,7 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 *
 *	Class for the different rent frequencies.
 *
-*	@package	Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class RentFrequencies extends ValuesBase {

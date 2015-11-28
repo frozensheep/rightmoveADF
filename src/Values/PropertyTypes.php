@@ -17,7 +17,7 @@ use Frozensheep\RightmoveADF\Values\ValuesBase;
 *
 *	Class for the different property types.
 *
-*	@package	Frozensheep\RightmoveADF\Values
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class PropertyTypes extends ValuesBase {
@@ -71,7 +71,7 @@ class PropertyTypes extends ValuesBase {
 	const Ruins = 77;
 	const Restaurant = 80;
 	const Cafe = 83;
-	const Mill2 = 86; //check this one out in the spec as the examples could be wrong
+	const MillCommercial = 86;
 	const Castle = 92;
 	const VillageHouse = 95;
 	const CaveHouse = 101;

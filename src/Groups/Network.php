@@ -18,7 +18,7 @@ use Frozensheep\Synthesize\Synthesizer;
 *
 *	Class to handle Network group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Network implements GroupInterface, \JsonSerializable {

@@ -21,7 +21,7 @@ use Frozensheep\RightmoveADF\Values\TenureTypes;
 *
 *	Class to handle Price group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Price implements GroupInterface, \JsonSerializable {

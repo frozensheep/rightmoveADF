@@ -15,9 +15,16 @@ namespace Frozensheep\RightmoveADF\Request;
 *
 *	Interface for all requests.
 *
-*	@package	Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF
 *
 */
 interface RequestInterface {
 
+	/**
+	*	Get URL Method
+	*
+	*	Returns the correct URL for the enviroment.
+	*	@return string
+	*/
+	public function getURL();
 }

@@ -19,7 +19,7 @@ use Frozensheep\RightmoveADF\Values\Channels;
 *
 *	Class to handle Branch group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Branch implements GroupInterface, \JsonSerializable {

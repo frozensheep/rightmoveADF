@@ -10,8 +10,7 @@
 
 namespace Frozensheep\RightmoveADF\Request;
 
-use Frozensheep\RightmoveADF\Request\RequestInterface;
-use Frozensheep\Synthesize\Synthesizer;
+use Frozensheep\RightmoveADF\Request\RequestBase;
 use Frozensheep\RightmoveADF\Groups\Network;
 use Frozensheep\RightmoveADF\Groups\Branch;
 use Frozensheep\RightmoveADF\Groups\PropertyFeature;
@@ -22,13 +21,24 @@ use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 *
 *	Class for the get property emails request.
 *
-*	@package	Frozensheep\RightmoveADF\Request
+*	@package	Frozensheep\RightmoveADF
 *
 */
-class GetPropertyEmails implements RequestInterface, \JsonSerializable  {
+class GetPropertyEmails extends RequestBase {
 
-	use Synthesizer;
+	/**
+	*	@var string $_strLiveURL The live request URL.
+	*/
+	protected $_strLiveURL = 'https://adfapi.rightmove.co.uk/v1/property/getpropertyemails';
 
+	/**
+	*	@var string $_strTestURL The test request URL.
+	*/
+	protected $_strTestURL = '';
+
+	/**
+	*	@var array $arrSynthesize The synthesize array.
+	*/
 	protected $arrSynthesize = array(
 		'network' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Network', 'required' => true),
 		'branch' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Branch', 'required' => true),

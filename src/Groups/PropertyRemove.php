@@ -19,7 +19,7 @@ use Frozensheep\RightmoveADF\Values\RemovalReasons;
 *
 *	Class to handle Property group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class PropertyRemove implements GroupInterface, \JsonSerializable {

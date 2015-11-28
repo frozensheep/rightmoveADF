@@ -25,7 +25,7 @@ use Frozensheep\RightmoveADF\Values\LetTypes;
 *
 *	Class to handle Property group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Property implements GroupInterface, \JsonSerializable {

@@ -19,7 +19,7 @@ use Frozensheep\RightmoveADF\Values\DimensionUnits;
 *
 *	Class to handle Room group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Room implements GroupInterface, \JsonSerializable {

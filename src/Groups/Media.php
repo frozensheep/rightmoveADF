@@ -19,7 +19,7 @@ use Frozensheep\RightmoveADF\Values\MediaTypes;
 *
 *	Class to handle Media group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Media implements GroupInterface, \JsonSerializable {

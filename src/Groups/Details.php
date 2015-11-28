@@ -28,7 +28,7 @@ use Frozensheep\RightmoveADF\Groups\Room;
 *
 *	Class to handle Details group.
 *
-*	@package	Frozensheep\RightmoveADF\Groups
+*	@package	Frozensheep\RightmoveADF
 *
 */
 class Details implements GroupInterface, \JsonSerializable {
@@ -38,7 +38,7 @@ class Details implements GroupInterface, \JsonSerializable {
 	protected $arrSynthesize = array(
 		'summary' => array('type' => 'string', 'required' => true, 'max' => 1000),
 		'description' => array('type' => 'string', 'required' => true, 'max' => 32000),
-		'features' => array('type' => 'objectarray', 'class' => 'Frozensheep\Synthesize\Type\String', 'max' => 10),
+		'features' => array('type' => 'objectarray', 'class' => 'Frozensheep\Synthesize\Type\StringObject', 'max' => 10),
 		'bedrooms' => array('type' => 'int', 'required' => true, 'min' => 0),
 		'bathrooms' => array('type' => 'int', 'min' => 0),
 		'reception_rooms' => array('type' => 'int', 'min' => 0),
