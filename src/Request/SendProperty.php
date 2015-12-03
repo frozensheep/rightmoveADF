@@ -33,7 +33,7 @@ class SendProperty extends RequestBase {
 	/**
 	*	@var string $_strTestURL The test request URL.
 	*/
-	protected $_strTestURL = '';
+	protected $_strTestURL = 'https://adfapi.adftest.rightmove.com/v1/property/sendpropertydetails';
 
 	/**
 	*	@var array $arrSynthesize The synthesize array.

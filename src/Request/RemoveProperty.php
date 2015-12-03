@@ -33,7 +33,7 @@ class RemoveProperty extends RequestBase {
 	/**
 	*	@var string $_strTestURL The test request URL.
 	*/
-	protected $_strTestURL = '';
+	protected $_strTestURL = 'https://adfapi.adftest.rightmove.com/v1/property/removeproperty';
 
 	/**
 	*	@var array $arrSynthesize The synthesize array.

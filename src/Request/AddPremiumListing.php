@@ -34,7 +34,7 @@ class AddPremiumListing extends RequestBase {
 	/**
 	*	@var string $_strTestURL The test request URL.
 	*/
-	protected $_strTestURL = '';
+	protected $_strTestURL = 'https://adfapi.adftest.rightmove.com/v1/property/addpremiumlisting';
 
 	/**
 	*	@var array $arrSynthesize The synthesize array.
