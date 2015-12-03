@@ -2,3 +2,5 @@
 /_build
 /docs
 /composer.lock
+/examples/cert.pem
+/examples/config.php
