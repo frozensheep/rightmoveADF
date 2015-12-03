@@ -18,7 +18,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Frozensheep\\RightmoveADF\\": "src"
+			"Frozensheep\\RightmoveADF\\": "src",
+			"Frozensheep\\Synthesize\\Tests\\": "tests"
 		}
 	}
 }
