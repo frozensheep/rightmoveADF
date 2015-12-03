@@ -19,11 +19,13 @@ require_once('config.php');
 $objRightmoveADF = new RightmoveADF(CERT_FILE, CERT_PASS, RightmoveADF::TEST);
 
 //create a request
-$objRequest = $objRightmoveADF->createRequest(RightmoveADF::getBranchPropertyList);
+$objRequest = $objRightmoveADF->createRequest(RightmoveADF::sendProperty);
 
 //set the details for the request
 $objRequest->network->network_id = NETWORK_ID;
 $objRequest->branch->branch_id = BRANCH_ID;
 
 //send the request
-//$objResponse = $objRightmove->send($objRequest , 'http://requestb.in/1cauwv71');
+$objResponse = $objRightmove->send($objRequest, 'http://requestb.in/1cauwv71');
+
+print_r($objResponse);

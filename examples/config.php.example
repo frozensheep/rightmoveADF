@@ -1,0 +1,13 @@
+<?php
+
+//full path to the PEM certificate
+define('CERT_FILE', __DIR__.'/cert.pem');
+
+//the password
+define('CERT_PASS', 'mypassword');
+
+//the network ID
+define('NETWORK_ID', '1234');
+
+//the branch ID
+define('BRANCH_ID', '12345');
