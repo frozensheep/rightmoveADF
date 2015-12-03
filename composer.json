@@ -1,7 +1,7 @@
 {
 	"name": "frozensheep/rightmove-adf",
 	"type": "library",
-	"description": "API client library for the Rightmove Real Time Datafeed (ADF).",
+	"description": "PHP library for the Rightmove Real Time Datafeed (ADF).",
 	"keywords": ["rightmove", "api", "adf", "property", "renting", "sales", "real estate", "data feed", "feed"],
 	"homepage": "https://github.com/frozensheep/rightmoveADF",
 	"license": "MIT",
@@ -12,17 +12,10 @@
 			"homepage": "https://frozensheep.com"
 		}
 	],
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "/vagrant/synthesize"
-		}
-	],
 	"require": {
-		"php": ">=5.3.0",
+		"php": ">=5.4",
 		"frozensheep/synthesize": "dev-master"
 	},
-
 	"autoload": {
 		"psr-4": {
 			"Frozensheep\\RightmoveADF\\": "src"
