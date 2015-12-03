@@ -14,6 +14,16 @@ matrix:
     - php: 7
     - php: hhvm
 
+install:
+  - composer require satooshi/php-coveralls
+
 before_script:
    - composer self-update
    - composer install --no-interaction
+
+script:
+   - mkdir -p build/logs
+   - phpunit
+
+after_success:
+   - vendor/bin/coveralls -v
