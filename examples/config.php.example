@@ -7,7 +7,7 @@ define('CERT_FILE', __DIR__.'/cert.pem');
 define('CERT_PASS', 'mypassword');
 
 //the network ID
-define('NETWORK_ID', '1234');
+define('NETWORK_ID', 1234);
 
 //the branch ID
-define('BRANCH_ID', '12345');
+define('BRANCH_ID', 12345);
