@@ -1,5 +1,5 @@
 /vendor
-/_build
+/build
 /docs
 /composer.lock
 /examples/cert.pem
