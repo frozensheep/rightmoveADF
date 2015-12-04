@@ -11,6 +11,7 @@
 namespace Frozensheep\RightmoveADF\Request;
 
 use Frozensheep\RightmoveADF\Request\RequestInterface;
+use Frozensheep\RightmoveADF\RightmoveADF;
 use Frozensheep\Synthesize\Synthesizer;
 
 /**
@@ -38,10 +39,11 @@ class RequestBase implements RequestInterface, \JsonSerializable {
 	/**
 	*	Get URL Method
 	*
-	*	Returns the correct URL for the enviroment.
+	*	Returns the correct URL for the environment.
+	*	@param int $numEnvironment The environment we are in.
 	*	@return string
 	*/
-	public function getURL(){
-		return $this->boolEnviroment ? $this->_strLiveURL : $this->_strTestURL;
+	public function getURL($numEnvironment = RightmoveADF::TEST){
+		return ($numEnvironment==RightmoveADF::LIVE) ? $this->_strLiveURL : $this->_strTestURL;
 	}
 }
