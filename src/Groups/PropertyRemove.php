@@ -29,6 +29,6 @@ class PropertyRemove implements GroupInterface, \JsonSerializable {
 	protected $arrSynthesize = array(
 		'agent_ref' => array('type' => 'string', 'required' => true, 'max' => 80),
 		'removal_reason' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\RemovalReasons'),
-		'transaction_date' => array('type' => 'datetime', 'format' => 'd-m-Y G:i:s')
+		'transaction_date' => array('type' => 'datetime', 'format' => 'd-m-Y G:i:s', 'autoinit' => false)
 	);
 }
