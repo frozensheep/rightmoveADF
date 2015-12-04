@@ -13,7 +13,7 @@ namespace Frozensheep\RightmoveADF\Request;
 use Frozensheep\RightmoveADF\Request\RequestBase;
 use Frozensheep\RightmoveADF\Groups\Network;
 use Frozensheep\RightmoveADF\Groups\Branch;
-use Frozensheep\RightmoveADF\Groups\ExportPeriod;
+use Frozensheep\RightmoveADF\Groups\ExportPeriodTime;
 
 /**
 *	Get Branch Emails Class
@@ -41,6 +41,6 @@ class GetBranchEmails extends RequestBase {
 	protected $arrSynthesize = array(
 		'network' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Network', 'required' => true),
 		'branch' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Branch', 'required' => true),
-		'export_period' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\ExportPeriod', 'required' => true)
+		'export_period' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\ExportPeriodTime', 'required' => true)
 	);
 }

@@ -25,7 +25,7 @@ use Frozensheep\RightmoveADF\Request\GetBrandEmails;
 use Frozensheep\RightmoveADF\Request\GetBranchEmails;
 use Frozensheep\RightmoveADF\Request\GetBrandPhoneLeads;
 use Frozensheep\RightmoveADF\Request\GetBranchPhoneLeads;
-use Frozensheep\RightmoveADF\Request\GetPropertyEmail;
+use Frozensheep\RightmoveADF\Request\GetPropertyEmails;
 
 /**
 *	RightmoveADF Class
@@ -54,7 +54,7 @@ class RightmoveADF {
 	const GetBranchEmails = 10;
 	const GetBrandPhoneLeads = 11;
 	const GetBranchPhoneLeads = 12;
-	const GetPropertyEmail = 13;
+	const GetPropertyEmails = 13;
 
 	/**
 	*	@var array $arrSynthesize The synthesize array.
@@ -125,8 +125,8 @@ class RightmoveADF {
 			case RightmoveADF::GetBranchPhoneLeads:
 				return new GetBranchPhoneLeads();
 				break;
-			case RightmoveADF::GetPropertyEmail:
-				return new GetPropertyEmail();
+			case RightmoveADF::GetPropertyEmails:
+				return new GetPropertyEmails();
 				break;
 			default:
 				throw new UnknownRequestTypeException();
