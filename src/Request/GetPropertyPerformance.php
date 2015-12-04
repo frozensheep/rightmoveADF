@@ -13,7 +13,7 @@ namespace Frozensheep\RightmoveADF\Request;
 use Frozensheep\RightmoveADF\Request\RequestBase;
 use Frozensheep\RightmoveADF\Groups\Network;
 use Frozensheep\RightmoveADF\Groups\Branch;
-use Frozensheep\RightmoveADF\Groups\PropertyFeature;
+use Frozensheep\RightmoveADF\Groups\PropertyRef;
 use Frozensheep\RightmoveADF\Groups\ExportPeriod;
 
 /**
@@ -42,7 +42,7 @@ class GetPropertyPerformance extends RequestBase {
 	protected $arrSynthesize = array(
 		'network' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Network', 'required' => true),
 		'branch' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Branch', 'required' => true),
-		'property' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\PropertyFeature', 'required' => true),
+		'property' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\PropertyRef', 'required' => true),
 		'export_period' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\ExportPeriod', 'required' => true)
 	);
 }
