@@ -14,7 +14,6 @@ use Frozensheep\RightmoveADF\Request\RequestBase;
 use Frozensheep\RightmoveADF\Groups\Network;
 use Frozensheep\RightmoveADF\Groups\Branch;
 use Frozensheep\RightmoveADF\Groups\PropertyFeature;
-use Frozensheep\RightmoveADF\Groups\FeaturedProperty;
 
 /**
 *	Add Featured Property Class
@@ -42,7 +41,6 @@ class AddFeaturedProperty extends RequestBase {
 	protected $arrSynthesize = array(
 		'network' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Network', 'required' => true),
 		'branch' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Branch', 'required' => true),
-		'property' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\PropertyFeature', 'required' => true),
-		'featured_property' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\FeaturedProperty', 'required' => true)
+		'property' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\PropertyFeature', 'required' => true)
 	);
 }
