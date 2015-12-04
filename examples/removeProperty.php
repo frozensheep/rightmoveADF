@@ -25,7 +25,7 @@ $objRequest = $objRightmoveADF->createRequest(RightmoveADF::RemoveProperty);
 $objRequest->network->network_id = NETWORK_ID;
 $objRequest->branch->branch_id = BRANCH_ID;
 $objRequest->branch->channel = Frozensheep\RightmoveADF\Values\Channels::Lettings;
-$objRequest->property->agent_ref = PROPERTY_ID;
+$objRequest->property->agent_ref = PROPERTY_REF;
 //$objRequest->property->removal_reason = Frozensheep\RightmoveADF\Values\RemovalReasons::LetByUs;
 //$objRequest->property->transaction_date = 'now';
 

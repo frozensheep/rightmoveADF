@@ -25,7 +25,7 @@ $objRequest = $objRightmoveADF->createRequest(RightmoveADF::AddFeaturedProperty)
 $objRequest->network->network_id = NETWORK_ID;
 $objRequest->branch->branch_id = BRANCH_ID;
 $objRequest->branch->channel = Frozensheep\RightmoveADF\Values\Channels::Lettings;
-$objRequest->property->agent_ref = PROPERTY_ID;
+$objRequest->property->agent_ref = PROPERTY_REF;
 $objRequest->property->featured_property->featured_property_type = Frozensheep\RightmoveADF\Values\FeaturedPropertyTypes::FeaturedPropertyOfTheWeek;
 
 //send the request

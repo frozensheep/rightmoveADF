@@ -12,5 +12,5 @@ define('NETWORK_ID', 1234);
 //the branch ID
 define('BRANCH_ID', 12345);
 
-//the a property ID
-define('PROPERTY_ID', 'PROP_1');
+//the a property REF
+define('PROPERTY_REF', 'PROP_1');

@@ -25,9 +25,7 @@ $objRequest = $objRightmoveADF->createRequest(RightmoveADF::RemoveFeaturedProper
 $objRequest->network->network_id = NETWORK_ID;
 $objRequest->branch->branch_id = BRANCH_ID;
 $objRequest->branch->channel = Frozensheep\RightmoveADF\Values\Channels::Lettings;
-$objRequest->property->agent_ref = PROPERTY_ID;
-
-echo json_encode($objRequest);
+$objRequest->property->agent_ref = PROPERTY_REF;
 
 //send the request
 $objResponse = $objRightmoveADF->send($objRequest);
