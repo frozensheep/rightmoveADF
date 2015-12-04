@@ -1,6 +1,6 @@
 <?php
 /**
-*	Remove Property Example.
+*	Add Premium Listing Example.
 *
 *	@package	Frozensheep\RightmoveADF
 *	@author		Jacob Wyke <jacob@frozensheep.com>

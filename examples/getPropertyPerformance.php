@@ -1,6 +1,6 @@
 <?php
 /**
-*	Remove Property Example.
+*	Get Property Performance Example.
 *
 *	@package	Frozensheep\RightmoveADF
 *	@author		Jacob Wyke <jacob@frozensheep.com>
