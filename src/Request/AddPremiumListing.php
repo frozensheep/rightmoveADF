@@ -13,8 +13,7 @@ namespace Frozensheep\RightmoveADF\Request;
 use Frozensheep\RightmoveADF\Request\RequestBase;
 use Frozensheep\RightmoveADF\Groups\Network;
 use Frozensheep\RightmoveADF\Groups\Branch;
-use Frozensheep\RightmoveADF\Groups\PropertyFeature;
-use Frozensheep\RightmoveADF\Groups\PremiumListing;
+use Frozensheep\RightmoveADF\Groups\PropertyPremium;
 
 /**
 *	Add Premium Listing Class
@@ -42,7 +41,6 @@ class AddPremiumListing extends RequestBase {
 	protected $arrSynthesize = array(
 		'network' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Network', 'required' => true),
 		'branch' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Branch', 'required' => true),
-		'property' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\PropertyFeature', 'required' => true),
-		'premium_listing' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\PremiumListing', 'required' => true)
+		'property' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\PropertyPremium', 'required' => true)
 	);
 }
