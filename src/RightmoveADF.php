@@ -17,7 +17,7 @@ use Frozensheep\RightmoveADF\Request\SendProperty;
 use Frozensheep\RightmoveADF\Request\RemoveProperty;
 use Frozensheep\RightmoveADF\Request\GetBranchPropertyList;
 use Frozensheep\RightmoveADF\Request\AddPremiumListing;
-use Frozensheep\RightmoveADF\Request\AddFeraturedProperty;
+use Frozensheep\RightmoveADF\Request\AddFeaturedProperty;
 use Frozensheep\RightmoveADF\Request\RemoveFeaturedProperty;
 use Frozensheep\RightmoveADF\Request\GetPropertyPerformance;
 use Frozensheep\RightmoveADF\Request\GetBranchPerformance;
@@ -46,7 +46,7 @@ class RightmoveADF {
 	const RemoveProperty = 2;
 	const GetBranchPropertyList = 3;
 	const AddPremiumListing = 4;
-	const AddFeraturedProperty = 5;
+	const AddFeaturedProperty = 5;
 	const RemoveFeaturedProperty = 6;
 	const GetPropertyPerformance = 7;
 	const GetBranchPerformance = 8;
@@ -101,8 +101,8 @@ class RightmoveADF {
 			case RightmoveADF::AddPremiumListing:
 				return new AddPremiumListing();
 				break;
-			case RightmoveADF::AddFeraturedProperty:
-				return new AddFeraturedProperty();
+			case RightmoveADF::AddFeaturedProperty:
+				return new AddFeaturedProperty();
 				break;
 			case RightmoveADF::RemoveFeaturedProperty:
 				return new RemoveFeaturedProperty();
