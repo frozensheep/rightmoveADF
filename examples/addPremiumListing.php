@@ -25,14 +25,12 @@ $objRequest = $objRightmoveADF->createRequest(RightmoveADF::AddPremiumListing);
 $objRequest->network->network_id = NETWORK_ID;
 $objRequest->branch->branch_id = BRANCH_ID;
 $objRequest->branch->channel = Frozensheep\RightmoveADF\Values\Channels::Lettings;
-$objRequest->property->agent_ref = '000458';
+$objRequest->property->agent_ref = PROPERTY_ID;
 $objRequest->property->premium_listing->display_type = Frozensheep\RightmoveADF\Values\DisplayTypes::OneLargeTwoSmall;
 //$objRequest->property->premium_listing->resale_stamp_text = Frozensheep\RightmoveADF\Values\StampTexts::NoChain;
 $objRequest->property->premium_listing->lettings_stamp_text = Frozensheep\RightmoveADF\Values\StampTexts::PeriodProperty;
 $objRequest->property->premium_listing->web_flag = true;
 $objRequest->property->premium_listing->mobile_flag = true;
-
-//echo json_encode($objRequest);
 
 //send the request
 $objResponse = $objRightmoveADF->send($objRequest);
