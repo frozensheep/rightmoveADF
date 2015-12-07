@@ -15,7 +15,7 @@
 	"require": {
 		"php": ">=5.4",
 		"ext-curl": "*",
-		"frozensheep/synthesize": "dev-master"
+		"frozensheep/synthesize": "1.*"
 	},
 	"autoload": {
 		"psr-4": {
