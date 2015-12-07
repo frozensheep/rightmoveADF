@@ -1,6 +1,6 @@
 <?php
 /**
-*	This file contains the Conditons Enum class.
+*	This file contains the Conditions Enum class.
 *
 *	@package	Frozensheep\RightmoveADF
 *	@author		Jacob Wyke <jacob@frozensheep.com>
@@ -13,14 +13,14 @@ namespace Frozensheep\RightmoveADF\Values;
 use Frozensheep\RightmoveADF\Values\ValuesBase;
 
 /**
-*	Conditons Enum Class
+*	Conditions Enum Class
 *
-*	Class for the different Conditons.
+*	Class for the different Conditions.
 *
 *	@package	Frozensheep\RightmoveADF
 *
 */
-class Conditons extends ValuesBase {
+class Conditions extends ValuesBase {
 
 	const Good = 1;
 	const SomeWorkNeeded = 2;

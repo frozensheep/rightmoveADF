@@ -33,6 +33,6 @@ class Room implements GroupInterface, \JsonSerializable {
 		'room_width' => array('type' => 'number', 'min' => 0),
 		'room_dimension_unit' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\DimensionUnits'),
 		'room_dimension_text' => array('type' => 'string', 'max' => 120),
-		'room_photo_urls' => array('type' => 'objectarray', 'class' => 'Frozensheep\Synthesize\Type\String', 'max' => 10),
+		'room_photo_urls' => array('type' => 'objectarray', 'class' => 'Frozensheep\Synthesize\Type\StringObject', 'max' => 10),
 	);
 }
