@@ -31,6 +31,6 @@ class Media implements GroupInterface, \JsonSerializable {
 		'media_url' => array('type' => 'string', 'required' => true, 'max' => 250),
 		'caption' => array('type' => 'string', 'max' => 50),
 		'sort_order' => array('type' => 'int', 'min' => 0),
-		'media_update_date' => array('type' => 'datetime', 'format' => 'd-m-Y G:i:s')
+		'media_update_date' => array('type' => 'datetime', 'format' => 'd-m-Y G:i:s', 'autoinit' => false)
 	);
 }
