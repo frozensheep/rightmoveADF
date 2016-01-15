@@ -33,18 +33,18 @@ Or add to a composer.json file:
 All 13 of the v1.2.1 API endpoints are supported.
 
 - SendProperty [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/sendProperty.php)]
-- RemoveProperty [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/removeProperty.php)
-- GetBranchPropertyList [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPropertyList.php)
-- AddPremiumListing [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/addPremiumListing.php)
-- AddFeaturedProperty [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/addFeaturedProperty.php)
-- RemoveFeaturedProperty [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/removeFeaturedProperty.php)
-- GetPropertyPerformance [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyPerformance.php)
-- GetBranchPerformance [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPerformance.php)
-- GetBrandEmails [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBrandEmails.php)
-- GetBranchEmails [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchEmails.php)
-- GetBrandPhoneLeads [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBrandPhoneLeads.php)
-- GetBranchPhoneLeads [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPhoneLeads.php)
-- GetPropertyEmails [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyEmails.php)
+- RemoveProperty [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/removeProperty.php)]
+- GetBranchPropertyList [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPropertyList.php)]
+- AddPremiumListing [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/addPremiumListing.php)]
+- AddFeaturedProperty [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/addFeaturedProperty.php)]
+- RemoveFeaturedProperty [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/removeFeaturedProperty.php)]
+- GetPropertyPerformance [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyPerformance.php)]
+- GetBranchPerformance [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPerformance.php)]
+- GetBrandEmails [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBrandEmails.php)]
+- GetBranchEmails [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchEmails.php)]
+- GetBrandPhoneLeads [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBrandPhoneLeads.php)]
+- GetBranchPhoneLeads [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPhoneLeads.php)]
+- GetPropertyEmails [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyEmails.php)]
 
 ```
 use Frozensheep\RightmoveADF\RightmoveADF;
