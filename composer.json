@@ -1,7 +1,7 @@
 {
 	"name": "frozensheep/rightmove-adf",
 	"type": "library",
-	"description": "PHP library for the Rightmove Real Time Datafeed (ADF).",
+	"description": "PHP library for the Rightmove Real Time Property Datafeed (ADF).",
 	"keywords": ["rightmove", "api", "adf", "property", "renting", "sales", "real estate", "data feed", "feed"],
 	"homepage": "https://github.com/frozensheep/rightmoveADF",
 	"license": "MIT",
