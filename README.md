@@ -46,6 +46,7 @@ All 13 of the v1.2.1 API endpoints are supported.
 - GetBranchPhoneLeads [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPhoneLeads.php)]
 - GetPropertyEmails [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyEmails.php)]
 
+### Example
 ```php
 <?php
 use Frozensheep\RightmoveADF\RightmoveADF;
@@ -70,6 +71,8 @@ if($objResponse->success){
 	print_r($objResponse->errors);
 }
 ```
+
+Rightmove will provide you with a PEM certificate/password and Network ID to use in the requests.
 
 ## Todo
 
