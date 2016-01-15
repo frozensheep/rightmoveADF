@@ -47,10 +47,12 @@ All 13 of the v1.2.1 API endpoints are supported.
 - GetPropertyEmails [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyEmails.php)]
 
 ```php
+<?php
 use Frozensheep\RightmoveADF\RightmoveADF;
 
 //create the RightmoveADF object
 $objRightmoveADF = new RightmoveADF(CERT_FILE, CERT_PASS, RightmoveADF::TEST);
+//$objRightmoveADF = new RightmoveADF(CERT_FILE, CERT_PASS, RightmoveADF::LIVE);
 
 //create a request
 $objRequest = $objRightmoveADF->createRequest(RightmoveADF::GetBranchPropertyList);
@@ -61,4 +63,12 @@ $objRequest->branch->branch_id = BRANCH_ID;
 
 //send the request
 $objResponse = $objRightmoveADF->send($objRequest);
+
+if($objResponse->success){
+	...
+}else{
+	print_r($objResponse->errors);
+}
 ```
+
+$objResponse will contain the Rightmove response as outlined in their spec.
