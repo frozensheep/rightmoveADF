@@ -76,9 +76,12 @@ if($objResponse->success){
 
 Rightmove will provide you with a PEM certificate/password and Network ID to use in the requests.
 
+All values that you set will be checked against what the API expects and return exceptions if the wrong data type is set.
+
 ## Todo
 
 - Add in option to set verbose mode on the request to help track errors with certificates.
+- Add in a pre-send validation check for required fields.
 
 ## Known Issues
 None.
