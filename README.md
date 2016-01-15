@@ -32,7 +32,7 @@ Or add to a composer.json file:
 
 All 13 of the v1.2.1 API endpoints are supported.
 
-- SendProperty [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/sendProperty.php)
+- SendProperty [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/sendProperty.php)]
 - RemoveProperty [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/removeProperty.php)
 - GetBranchPropertyList [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPropertyList.php)
 - AddPremiumListing [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/addPremiumListing.php)
@@ -45,3 +45,20 @@ All 13 of the v1.2.1 API endpoints are supported.
 - GetBrandPhoneLeads [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBrandPhoneLeads.php)
 - GetBranchPhoneLeads [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPhoneLeads.php)
 - GetPropertyEmails [Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyEmails.php)
+
+```
+use Frozensheep\RightmoveADF\RightmoveADF;
+
+//create the RightmoveADF object
+$objRightmoveADF = new RightmoveADF(CERT_FILE, CERT_PASS, RightmoveADF::TEST);
+
+//create a request
+$objRequest = $objRightmoveADF->createRequest(RightmoveADF::GetBranchPropertyList);
+
+//set the details for the request
+$objRequest->network->network_id = NETWORK_ID;
+$objRequest->branch->branch_id = BRANCH_ID;
+
+//send the request
+$objResponse = $objRightmoveADF->send($objRequest);
+```
