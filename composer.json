@@ -17,10 +17,17 @@
 		"ext-curl": "*",
 		"frozensheep/synthesize": "1.*"
 	},
+	"require-dev": {
+		"phpunit/phpunit": "5.1.*",
+	},
 	"autoload": {
 		"psr-4": {
-			"Frozensheep\\RightmoveADF\\": "src",
-			"Frozensheep\\Synthesize\\Tests\\": "tests"
+			"Frozensheep\\RightmoveADF\\": "src"
+		}
+	}
+	"autoload-dev": {
+		"psr-4": {
+			"Frozensheep\\RightmoveADF\\Tests\\": "tests"
 		}
 	}
 }
