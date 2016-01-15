@@ -74,3 +74,8 @@ if($objResponse->success){
 ## Todo
 
 - Add in option to set verbose mode on the request to help track errors with certificates.
+
+## Known Issues
+None.
+
+Please submit any to the [Github repo](https://github.com/frozensheep/rightmoveADF/issues).
