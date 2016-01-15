@@ -22,10 +22,10 @@ composer require frozensheep/rightmove-adf
 
 Or add to a composer.json file:
 
-```
-	"require": {
-		"frozensheep/rightmove-adf" : "1.*"
-	}
+```json
+"require": {
+	"frozensheep/rightmove-adf" : "1.*"
+}
 ```
 
 ## Usage
@@ -71,4 +71,6 @@ if($objResponse->success){
 }
 ```
 
-$objResponse will contain the Rightmove response as outlined in their spec.
+## Todo
+
+- Add in option to set verbose mode on the request to help track errors with certificates.
