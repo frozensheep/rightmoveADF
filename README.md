@@ -46,7 +46,7 @@ All 13 of the v1.2.1 API endpoints are supported.
 - GetBranchPhoneLeads [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPhoneLeads.php)]
 - GetPropertyEmails [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyEmails.php)]
 
-### Example
+**Example**
 ```php
 <?php
 use Frozensheep\RightmoveADF\RightmoveADF;
