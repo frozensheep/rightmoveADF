@@ -66,9 +66,9 @@ $objRequest->branch->branch_id = BRANCH_ID;
 $objResponse = $objRightmoveADF->send($objRequest);
 
 if($objResponse->success){
-	...
-	...do something with the response
-	...
+	//
+	//do something with the response
+	//
 }else{
 	print_r($objResponse->errors);
 }
