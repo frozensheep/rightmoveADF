@@ -27,8 +27,12 @@ class Curl {
 	*	@param int $numRequestType The request type.
 	*	@return object
 	*/
-	public static function send($strJSON, $strURL, $strCertFile, $strCertPass){
+	public static function send($strJSON, $strURL, $strCertFile, $strCertPass, $boolDebug = false){
 		$resCurl = curl_init();
+
+		if($boolDebug){
+			curl_setopt($resCurl, CURLOPT_VERBOSE, 1);
+		}
 
 		curl_setopt($resCurl, CURLOPT_URL, $strURL);
 		curl_setopt($resCurl, CURLOPT_CERTINFO, 1);

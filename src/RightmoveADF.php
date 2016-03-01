@@ -41,6 +41,7 @@ class RightmoveADF {
 
 	const TEST = 0;
 	const LIVE = 1;
+	const DEBUG = 1;
 
 	const SendProperty = 1;
 	const RemoveProperty = 2;
@@ -135,15 +136,15 @@ class RightmoveADF {
 	}
 
 	/**
-	*	Create Request Method
+	*	Send Method
 	*
 	*	Returns the request object for the given request type.
 	*	@param int $numRequestType The request type.
 	*	@return object
 	*/
-	public function send($objRequest, $strURLOverride = ''){
+	public function send($objRequest, $strURLOverride = '', $boolDebug = false){
 		$strURL = ($strURLOverride) ? $strURLOverride : $objRequest->getURL($this->environment);
 
-		return Curl::send(json_encode($objRequest), $strURL, $this->cert_file, $this->cert_pass);
+		return Curl::send(json_encode($objRequest), $strURL, $this->cert_file, $this->cert_pass, $boolDebug);
 	}
 }

@@ -26,6 +26,8 @@ $objRequest->network->network_id = NETWORK_ID;
 $objRequest->branch->branch_id = BRANCH_ID;
 //$objRequest->branch->channel = Frozensheep\RightmoveADF\Values\Channels::Lettings;
 
+print_r(json_encode($objRequest));
+
 //send the request
 $objResponse = $objRightmoveADF->send($objRequest);
 
