@@ -14,6 +14,17 @@ PHP library for the Rightmove Real Time Property Datafeed.
 
 ## Install
 
+### Prerequisites
+
+To use this package, you need to:
+* Be running PHP 5.4 or above
+* Be using composer (if you want to follow the installation guide)
+* Rightmove will provide you with a PEM certificate/password and Network ID to use in the requests. You should also have a Branch ID.
+
+Note that this package's dependencies will also be installed. Check the `composer.json` file from the repository if you want to see what these are before using it.
+
+### Installation using Composer
+
 To install with Composer:
 
 ```sh
@@ -29,6 +40,44 @@ Or add to a composer.json file:
 ```
 
 ## Usage
+
+### Using the Examples
+
+Examples are provided. It's recommended that you setup one of the examples to see how to interact with the library before continuing.
+
+* Install this package using composer as outlined above.
+* create a directory for your project for example `public_html`
+
+```
+mkdir public_html
+```
+
+* copy the example code to the new `public_html` directory
+
+```
+cp -R vendor/frozensheep/rightmove-adf/examples/ public_html/
+```
+
+* copy the config file to a working Version
+
+```
+cp public_html/config.php.example public_html/config.php
+```
+
+* Edit the config file with your settings. You'll need to have a .pem file form RightMove with your Real Time Data Feed key in it, as well as your network and branch information.
+* run the local web server
+
+```
+cd public_html
+
+php -S localhost:8000
+```
+
+*  run one of the example files from you browser (eg  `http://localhost:8080/getBranchPropertyList.php`)
+
+### Available Methods
+
+All values that you set in the configuration will be checked against what the API expects and return exceptions if the wrong data type is set.
 
 All 13 of the v1.2.1 API endpoints are supported.
 
@@ -46,37 +95,6 @@ All 13 of the v1.2.1 API endpoints are supported.
 - GetBranchPhoneLeads [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getBranchPhoneLeads.php)]
 - GetPropertyEmails [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/getPropertyEmails.php)]
 
-**Example**
-```php
-<?php
-use Frozensheep\RightmoveADF\RightmoveADF;
-
-//create the RightmoveADF object
-$objRightmoveADF = new RightmoveADF(CERT_FILE, CERT_PASS, RightmoveADF::TEST);
-//$objRightmoveADF = new RightmoveADF(CERT_FILE, CERT_PASS, RightmoveADF::LIVE);
-
-//create a request
-$objRequest = $objRightmoveADF->createRequest(RightmoveADF::GetBranchPropertyList);
-
-//set the details for the request
-$objRequest->network->network_id = NETWORK_ID;
-$objRequest->branch->branch_id = BRANCH_ID;
-
-//send the request
-$objResponse = $objRightmoveADF->send($objRequest);
-
-if($objResponse->success){
-	//
-	//do something with the response
-	//
-}else{
-	print_r($objResponse->errors);
-}
-```
-
-Rightmove will provide you with a PEM certificate/password and Network ID to use in the requests.
-
-All values that you set will be checked against what the API expects and return exceptions if the wrong data type is set.
 
 ## Todo
 
