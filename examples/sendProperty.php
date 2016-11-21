@@ -75,6 +75,7 @@ $objRequest->property->price_information->price = 700.00;
 //$objRequest->property->price_information->auction = true;
 //$objRequest->property->price_information->tenure_unexpired_years = 75;
 //$objRequest->property->price_information->price_per_unit_area = 375;
+//$objRequest->property->price_information->price_per_unit_per_annum = 375;
 
 //
 //general details
