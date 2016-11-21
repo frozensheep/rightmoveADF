@@ -37,6 +37,7 @@ class Price implements GroupInterface, \JsonSerializable {
 		'tenure_type' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\TenureTypes'),
 		'auction' => array('type' => 'boolean'),
 		'tenure_unexpired_years' => array('type' => 'int'),
-		'price_per_unit_area' => array('type' => 'number')
+		'price_per_unit_area' => array('type' => 'number'),
+		'price_per_unit_per_annum' => array('type' => 'number')
 	);
 }
