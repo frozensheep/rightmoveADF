@@ -27,7 +27,7 @@ class PropertyTypes extends ValuesBase {
 	const EndOfTerraceHouse = 2;
 	const SemiDetachedHouse = 3;
 	const DetachedHouse = 4;
-	const MewsHous = 5;
+	const MewsHouse = 5;
 	const ClusterHouse = 6;
 	const GroundFloorFlat = 7;
 	const Flat = 8;
