@@ -79,7 +79,7 @@ php -S localhost:8000
 
 All values that you set in the configuration will be checked against what the API expects and return exceptions if the wrong data type is set.
 
-All 13 of the v1.2.1 API endpoints are supported.
+All 13 of the v1.2.2 API endpoints are supported.
 
 - SendProperty [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/sendProperty.php)]
 - RemoveProperty [[Example](https://github.com/frozensheep/rightmoveADF/blob/master/examples/removeProperty.php)]
