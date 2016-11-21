@@ -102,6 +102,7 @@ All 13 of the v1.2.1 API endpoints are supported.
 - Add in a pre-send validation check for required fields.
 
 ## Known Issues
-None.
+
+- The rightmove media crawler doesn't work over [Lets Encrypt](https://letsencrypt.org/) https and will just return an MED_00001 error.
 
 Please submit any to the [Github repo](https://github.com/frozensheep/rightmoveADF/issues).
