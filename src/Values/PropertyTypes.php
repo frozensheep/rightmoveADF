@@ -54,7 +54,7 @@ class PropertyTypes extends ValuesBase {
 	const ServicedApartment = 44;
 	const Parking = 45;
 	const ShelteredHousing = 46;
-	const ReteirmentProperty = 47;
+	const RetirementProperty = 47;
 	const HouseShare = 48;
 	const FlatShare = 49;
 	const ParkHome = 50;
