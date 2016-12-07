@@ -10,6 +10,7 @@ PHP library for the Rightmove Real Time Property Datafeed.
 [![PHP 5.5](https://img.shields.io/badge/php-5.5-8892BF.svg?style=flat-square)](https://php.net/)
 [![PHP 5.6](https://img.shields.io/badge/php-5.6-8892BF.svg?style=flat-square)](https://php.net/)
 [![PHP 7](https://img.shields.io/badge/php-7-8892BF.svg?style=flat-square)](https://php.net/)
+[![PHP 7.1](https://img.shields.io/badge/php-7.1-8892BF.svg?style=flat-square)](https://php.net/)
 
 
 ## Install
