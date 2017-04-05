@@ -76,6 +76,7 @@ class Details implements GroupInterface, \JsonSerializable {
 		'internet_bill_inc' => array('type' => 'boolean'),
 		'business_for_sale' => array('type' => 'boolean'),
 		'comm_use_class' => array('type' => 'objectarray', 'class' => 'Frozensheep\RightmoveADF\Values\CommercialuseClasses'),
-		'rooms' => array('type' => 'objectarray', 'class' => 'Frozensheep\RightmoveADF\Groups\Room', 'max' => 99)
+		'rooms' => array('type' => 'objectarray', 'class' => 'Frozensheep\RightmoveADF\Groups\Room', 'max' => 99),
+		'sizing' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Sizing', 'required' => false)
 	);
 }
