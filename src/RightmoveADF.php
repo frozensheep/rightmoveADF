@@ -10,6 +10,7 @@
 
 namespace Frozensheep\RightmoveADF;
 
+use Frozensheep\RightmoveADF\Request\SendOverseasProperty;
 use Frozensheep\Synthesize\Synthesizer;
 use Frozensheep\RightmoveADF\Exception\UnknownRequestTypeException;
 use Frozensheep\RightmoveADF\Curl;
@@ -56,6 +57,7 @@ class RightmoveADF {
 	const GetBrandPhoneLeads = 11;
 	const GetBranchPhoneLeads = 12;
 	const GetPropertyEmails = 13;
+	const SendOverseasProperty = 14;
 
 	/**
 	*	@var array $arrSynthesize The synthesize array.
@@ -92,6 +94,9 @@ class RightmoveADF {
 		switch($numRequestType){
 			case RightmoveADF::SendProperty:
 				return new SendProperty();
+				break;
+			case RightmoveADF::SendOverseasProperty:
+				return new SendOverseasProperty();
 				break;
 			case RightmoveADF::RemoveProperty:
 				return new RemoveProperty();
