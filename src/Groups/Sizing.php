@@ -26,8 +26,8 @@ class Sizing implements GroupInterface, \JsonSerializable {
 	use Synthesizer;
 
 	protected $arrSynthesize = array(
-		'minimum' => array('type' => 'int', 'min' => 0),
-		'maximum' => array('type' => 'int', 'min' => 0),
+		'minimum' => array('type' => 'number', 'min' => 0),
+		'maximum' => array('type' => 'number', 'min' => 0),
 		'area_unit' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\AreaUnits'),
 	);
 }
