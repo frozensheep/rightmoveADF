@@ -49,8 +49,8 @@ class Details implements GroupInterface, \JsonSerializable {
 		'internal_area_unit' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\AreaUnits'),
 		'land_area' => array('type' => 'number'),
 		'land_area_unit' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\AreaUnits'),
-		'minimum' => array('type' => 'int', 'min' => 0),
-		'maximum' => array('type' => 'int', 'min' => 0),
+		'minimum' => array('type' => 'number', 'min' => 0),
+		'maximum' => array('type' => 'number', 'min' => 0),
 		'area_unit' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\AreaUnits'),
 		'floors' => array('type' => 'int'),
 		'entrance_floor' => array('type' => 'enum', 'class' => 'Frozensheep\RightmoveADF\Values\EntranceFloors'),
@@ -76,6 +76,7 @@ class Details implements GroupInterface, \JsonSerializable {
 		'internet_bill_inc' => array('type' => 'boolean'),
 		'business_for_sale' => array('type' => 'boolean'),
 		'comm_use_class' => array('type' => 'objectarray', 'class' => 'Frozensheep\RightmoveADF\Values\CommercialuseClasses'),
-		'rooms' => array('type' => 'objectarray', 'class' => 'Frozensheep\RightmoveADF\Groups\Room', 'max' => 99)
+		'rooms' => array('type' => 'objectarray', 'class' => 'Frozensheep\RightmoveADF\Groups\Room', 'max' => 99),
+		'sizing' => array('type' => 'object', 'class' => 'Frozensheep\RightmoveADF\Groups\Sizing', 'required' => false)
 	);
 }
