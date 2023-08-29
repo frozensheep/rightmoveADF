@@ -141,4 +141,7 @@ class PropertyTypes extends ValuesBase {
 	const SportsFacilities = 535;
 	const Spa = 538;
 	const CampsiteAndHolidayVillage = 541;
+	const RetailPropertyShoppingCentre = 544;
+	const RetailPropertyPark = 547;
+	const RetailPropertyPopUp = 550;
 }
